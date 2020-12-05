@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "version": "0.1"
+  },
+  "species": [
+    {
+      "names": {
+        "en": "FireBird",
+        "fr": "OizoFeu"
+      },
+      "baseStats": {
+        "HP": 30,
+        "atk": 12,
+        "def": 7,
+        "elemAtk": 8,
+        "elemDef": 6,
+        "speed": 5
+      },
+      "element": "FIRE",
+      "family": "BIRD",
+      "attacks": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "names": {
+        "en": "EarthReptile",
+        "fr": "Repterre"
+      },
+      "baseStats": {
+        "HP": 40,
+        "atk": 8,
+        "def": 15,
+        "elemAtk": 4,
+        "elemDef": 10,
+        "speed": 3
+      },
+      "element": "EARTH",
+      "family": "REPT",
+      "attacks": []
+    },
+    {
+      "names": {
+        "en": "IceBeast",
+        "fr": "Brrrête"
+      },
+      "baseStats": {
+        "HP": 25,
+        "atk": 10,
+        "def": 6,
+        "elemAtk": 12,
+        "elemDef": 8,
+        "speed": 4
+      },
+      "element": "ICE",
+      "family": "BEAST",
+      "attacks": [
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  ]
+}

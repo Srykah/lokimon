@@ -1,0 +1,28 @@
+{
+  "keyboard": {
+    "up": [{
+      "type": "key",
+      "id": "up"
+    }],
+    "down": [{
+      "type": "key",
+      "id": "down"
+    }],
+    "left": [{
+      "type": "key",
+      "id": "left"
+    }],
+    "right": [{
+      "type": "key",
+      "id": "right"
+    }],
+    "ok": [{
+      "type": "key",
+      "id": "enter"
+    }],
+    "back": [{
+      "type": "key",
+      "id": "backspace"
+    }]
+  }
+}
