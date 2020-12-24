@@ -11,6 +11,7 @@ namespace mon {
 class GameOverScreen : public BaseScreen {
  public:
   explicit GameOverScreen(Application& app);
+  ~GameOverScreen() override = default;
 
   bool update(sf::Time delta) override;
   bool updateView(sf::Time delta) override;

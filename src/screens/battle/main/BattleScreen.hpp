@@ -16,6 +16,7 @@ class BattleScreen : public BaseScreen {
  public:
   explicit BattleScreen(Application& app, Trainer opponent);
   ~BattleScreen() override = default;
+  void init() override;
 
   bool update(sf::Time delta) override;
   bool updateView(sf::Time delta) override;
