@@ -17,9 +17,15 @@ BattleScreen::BattleScreen(Application& app, Trainer opponent)
       opponent(std::move(opponent)),
       playerMonster(getPlayer().getPartyMonster(0)),
       opponentMonster(this->opponent.getMonster(0)),
-      view(getViewData()) {
+      view(getViewData()),
+      textBox(getEventHandler()) {
   view.setPlayerMonster(playerMonster);
   view.setOpponentMonster(opponentMonster);
+}
+
+void BattleScreen::init() {
+  Screen::init();
+
   view.updateHPTexts();
 
   textBox.setView(view.getTextBox());
@@ -75,11 +81,13 @@ bool BattleScreen::onAttackClose() {
     childScreen = pushState<GameOverScreen>();
     registerSignalHandler({childScreen, "close"}, [this]() {
       clearStates();
+      return false;
     });
   } else if (opponentMonster->getCurrentHP() <= 0) {
     childScreen = pushState<VictoryScreen>();
     registerSignalHandler({childScreen, "close"}, [this]() {
       clearStates();
+      return false;
     });
   } else {
     childScreen = pushState<AttackMenuScreen>(*playerMonster);

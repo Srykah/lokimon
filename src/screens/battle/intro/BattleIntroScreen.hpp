@@ -18,6 +18,7 @@ class BattleIntroScreen : public BaseScreen {
                     const Monster& playerMonster,
                     const Monster& trainerMonster,
                     loki::gui::TextBoxController& textBox);
+  ~BattleIntroScreen() override = default;
 
   bool update(sf::Time delta) override;
   bool updateView(sf::Time delta) override;

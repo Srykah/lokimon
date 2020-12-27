@@ -12,6 +12,8 @@ namespace mon {
 class AttackScreen : public BaseScreen {
  public:
   explicit AttackScreen(Application& app);
+  ~AttackScreen() override = default;
+
   bool update(sf::Time delta) override;
   bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;

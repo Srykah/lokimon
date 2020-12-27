@@ -11,6 +11,7 @@ namespace mon {
 class VictoryScreen : public BaseScreen {
  public:
   explicit VictoryScreen(Application& app);
+  ~VictoryScreen() override = default;
 
   bool update(sf::Time delta) override;
   bool updateView(sf::Time delta) override;
