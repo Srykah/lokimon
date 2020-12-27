@@ -81,11 +81,13 @@ bool BattleScreen::onAttackClose() {
     childScreen = pushState<GameOverScreen>();
     registerSignalHandler({childScreen, "close"}, [this]() {
       clearStates();
+      return false;
     });
   } else if (opponentMonster->getCurrentHP() <= 0) {
     childScreen = pushState<VictoryScreen>();
     registerSignalHandler({childScreen, "close"}, [this]() {
       clearStates();
+      return false;
     });
   } else {
     childScreen = pushState<AttackMenuScreen>(*playerMonster);
