@@ -15,6 +15,7 @@ AttackMenuScreen::AttackMenuScreen(Application& app,
     : BaseScreen(app),
       monster(monster),
       view(getViewData(), monster) {}
+
 bool AttackMenuScreen::render(sf::RenderTarget& target,
                               sf::RenderStates states) const {
   target.draw(view, states);
@@ -22,7 +23,7 @@ bool AttackMenuScreen::render(sf::RenderTarget& target,
 }
 
 bool AttackMenuScreen::update(sf::Time delta) {
-  sendSignal("move selected", 0);
+  sendSignal("move", 0u);
   closeThisState();
   return true;
 }
