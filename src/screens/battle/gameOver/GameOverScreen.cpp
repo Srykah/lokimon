@@ -10,6 +10,7 @@ namespace mon {
 GameOverScreen::GameOverScreen(Application& app) : BaseScreen(app) {}
 
 bool GameOverScreen::update(sf::Time delta) {
+  closeThisState();
   return false;
 }
 bool GameOverScreen::updateView(sf::Time delta) {

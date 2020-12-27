@@ -65,13 +65,14 @@ bool BattleScreen::onIntroClose() {
 }
 
 bool BattleScreen::onAttackMenuMove(unsigned int index) {
-  removeSignalHandler({ childScreen, "move" });
+  removeSignalHandler({childScreen, "move"});
   playerMove = playerMonster->getAttack(index);
   chooseOpponentAttack();
-  childScreen = pushState<AttackScreen>();
-  registerSignalHandler({childScreen, "close"}, [this]() {
-    return onAttackClose();
-  });
+  childScreen =
+      pushState<AttackScreen>(*playerMonster, *playerMove, *opponentMonster,
+                              *opponentMove, textBox, view);
+  registerSignalHandler({childScreen, "close"},
+                        [this]() { return onAttackClose(); });
   return false;
 }
 
@@ -80,13 +81,13 @@ bool BattleScreen::onAttackClose() {
   if (playerMonster->getCurrentHP() <= 0) {
     childScreen = pushState<GameOverScreen>();
     registerSignalHandler({childScreen, "close"}, [this]() {
-      clearStates();
+      closeThisState();
       return false;
     });
   } else if (opponentMonster->getCurrentHP() <= 0) {
     childScreen = pushState<VictoryScreen>();
     registerSignalHandler({childScreen, "close"}, [this]() {
-      clearStates();
+      closeThisState();
       return false;
     });
   } else {

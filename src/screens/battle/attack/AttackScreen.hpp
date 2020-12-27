@@ -5,13 +5,20 @@
  */
 #pragma once
 
+#include <loki/gui/textBox/TextBoxController.hpp>
 #include <screens/base/BaseScreen.hpp>
 #include <screens/battle/main/BattleScreenView.hpp>
 namespace mon {
 
 class AttackScreen : public BaseScreen {
  public:
-  explicit AttackScreen(Application& app);
+  AttackScreen(Application& app,
+               Monster& playerMonster,
+               const Attack& playerMove,
+               Monster& opponentMonster,
+               const Attack& opponentMove,
+               loki::gui::TextBoxController& textBox,
+               BattleScreenView& parentView);
   ~AttackScreen() override = default;
 
   bool update(sf::Time delta) override;
@@ -20,16 +27,25 @@ class AttackScreen : public BaseScreen {
 
  private:
   void damageStep();
-  void computeAndPrintDamage(Monster* attacker,
-                             const Attack* attack,
-                             Monster* defender);
+  void computeAndPrintDamage(Monster& attacker,
+                             const Attack& attack,
+                             Monster& defender);
+  void printFailedAttack(const Monster& attacker, const Attack& attack);
+  void printAttack(const Monster& attacker,
+                   const Monster& defender,
+                   const Attack& attack,
+                   int damage,
+                   bool crit,
+                   Effectiveness effectiveness);
+  static std::string getShownName(const Monster& monster);
 
  private:
-  BattleScreenView* view = nullptr;
-  Monster* playerMonster = nullptr;
-  Monster* opponentMonster = nullptr;
-  const Attack* playerMove = nullptr;
-  const Attack* opponentMove = nullptr;
+  loki::gui::TextBoxController& textBox;
+  BattleScreenView& parentView;
+  Monster& playerMonster;
+  const Attack& playerMove;
+  Monster& opponentMonster;
+  const Attack& opponentMove;
 };
 
 }  // namespace mon

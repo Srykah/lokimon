@@ -10,6 +10,7 @@ namespace mon {
 VictoryScreen::VictoryScreen(Application& app) : BaseScreen(app) {}
 
 bool VictoryScreen::update(sf::Time delta) {
+  closeThisState();
   return false;
 }
 
