@@ -8,6 +8,7 @@
 #include <array>
 #include <vector>
 #include "Monster.hpp"
+#include "PlayerMapStatus.hpp"
 #include "models/data/Constants.hpp"
 
 namespace mon {
@@ -19,11 +20,13 @@ class Player {
   void load();
   [[nodiscard]] const std::string& getName() const { return name; }
   [[nodiscard]] Monster& getPartyMonster(unsigned int index);
+  [[nodiscard]] PlayerMapStatus& getMapStatus() { return mapStatus; }
 
  private:
   std::string name;
   std::vector<Monster> box;
   std::array<int, PARTY_SIZE> party;
+  PlayerMapStatus mapStatus;
   const GameData& gameData;
 };
 
