@@ -4,6 +4,7 @@
  * \copyright GNU GPL v3.0
  */
 #include "MapScreen.hpp"
+#include <screens/map/player/PlayerScreen.hpp>
 #include "core/path.hpp"
 
 namespace mon {
@@ -20,6 +21,7 @@ void MapScreen::init() {
   view.setMapData(mapData);
   playerSpriteData.load(DATA_PATH / "sprites" / "player.json");
   view.setPlayerSpriteData(playerSpriteData);
+  pushState<PlayerScreen>(mapData, view);
   Screen::init();
 }
 
