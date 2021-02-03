@@ -4,19 +4,20 @@
  * \copyright GNU GPL v3.0
  */
 #include "Application.hpp"
-#include <screens/battle/main/BattleScreen.hpp>
+//#include <screens/battle/main/BattleScreen.hpp>
+#include <screens/map/main/MapScreen.hpp>
 #include "path.hpp"
 
 namespace {
 
-const sf::Time TIME_PER_FRAME = sf::seconds(1.f/60.f);
+const sf::Time TIME_PER_FRAME = sf::seconds(1.f / 60.f);
 
 }
 
 namespace mon {
 
 Application::Application()
-    : window({640, 360},
+    : window({800, 600},
              "Lokimon",
              loki::window::Style::TITLEBAR | loki::window::Style::CLOSE |
                  loki::window::Style::INTEGER_ZOOM_RATIO),
@@ -25,14 +26,15 @@ Application::Application()
   loki::input::InputSettings inputs;
   inputs.load(SAVES_PATH / "inputs.json");
   eventHandler.setSettings(std::move(inputs));
-  eventHandler.setPlayerConfig(loki::input::PlayerConfig {"keyboard"});
+  eventHandler.setPlayerConfig(loki::input::PlayerConfig{"keyboard"});
   viewData.load();
   gameData.load();
   player.load();
-  Trainer trainer{"BadGuy",
-                  std::vector{Monster{"Glagla", SpeciesIndex{2}, false, gameData}}};
-  trainer.getMonster(0)->setAttack(0, AttackIndex{2});
-  stack.push(std::make_unique<BattleScreen>(*this, std::move(trainer)));
+  /*Trainer trainer{"BadGuy",
+                  std::vector{Monster{"Glagla", SpeciesIndex{2}, false,
+  gameData}}}; trainer.getMonster(0)->setAttack(0, AttackIndex{2});
+  stack.push(std::make_unique<BattleScreen>(*this, std::move(trainer)));*/
+  stack.push(std::make_unique<MapScreen>(*this, "test"));
 }
 
 void Application::run() {
