@@ -22,14 +22,14 @@ Application::Application()
              loki::window::Style::TITLEBAR | loki::window::Style::CLOSE |
                  loki::window::Style::INTEGER_ZOOM_RATIO),
       eventHandler(),
-      player(gameData) {
+      player() {
   loki::input::InputSettings inputs;
   inputs.load(SAVES_PATH / "inputs.json");
   eventHandler.setSettings(std::move(inputs));
   eventHandler.setPlayerConfig(loki::input::PlayerConfig{"keyboard"});
   viewData.load();
   gameData.load();
-  player.load();
+  player.load(gameData);
   /*Trainer trainer{"BadGuy",
                   std::vector{Monster{"Glagla", SpeciesIndex{2}, false,
   gameData}}}; trainer.getMonster(0)->setAttack(0, AttackIndex{2});

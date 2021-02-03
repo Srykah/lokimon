@@ -8,10 +8,10 @@
 
 namespace mon {
 
-Player::Player(const GameData& gameData) : name("Srykah"), gameData(gameData) {}
+Player::Player() : name("Srykah") {}
 
-void Player::load() {
-  box.emplace_back("Coucou", SpeciesIndex {0}, true, gameData);
+void Player::load(const GameData& gameData) {
+  box.emplace_back("Coucou", SpeciesIndex{0}, true, gameData);
   box.back().setAttack(0, AttackIndex{0});
   box.back().setAttack(1, AttackIndex{1});
   for (auto& index : party) {

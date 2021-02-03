@@ -13,9 +13,9 @@ namespace mon {
 
 class Player {
  public:
-  explicit Player(const GameData& gameData);
+  Player();
 
-  void load();
+  void load(const GameData& gameData);
   [[nodiscard]] const std::string& getName() const { return name; }
   [[nodiscard]] Monster* getPartyMonster(unsigned int index);
 
@@ -23,7 +23,6 @@ class Player {
   std::string name;
   std::vector<Monster> box;
   int party[PARTY_SIZE];
-  const GameData& gameData;
 };
 
 }  // namespace mon
