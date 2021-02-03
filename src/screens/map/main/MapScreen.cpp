@@ -18,6 +18,8 @@ void MapScreen::init() {
                  return &tilesetData;
                });
   view.setMapData(mapData);
+  playerSpriteData.load(DATA_PATH / "sprites" / "player.json");
+  view.setPlayerSpriteData(playerSpriteData);
   Screen::init();
 }
 
