@@ -25,6 +25,7 @@ class MapScreen : public BaseScreen {
   std::string mapName;
   loki::tiles::TilesetData tilesetData;
   loki::tiles::MapData mapData;
+  loki::sprites::SpriteData playerSpriteData;
 };
 
 }  // namespace mon
