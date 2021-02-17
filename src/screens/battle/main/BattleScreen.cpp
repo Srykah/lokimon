@@ -18,7 +18,7 @@ BattleScreen::BattleScreen(Application& app, Trainer opponent)
       playerMonster(getPlayer().getPartyMonster(0)),
       opponentMonster(this->opponent.getMonster(0)),
       view(getViewData()),
-      textBox(getEventHandler()) {
+      textBox(getEventHandler(), "ok") {
   view.setPlayerMonster(playerMonster);
   view.setOpponentMonster(opponentMonster);
 }

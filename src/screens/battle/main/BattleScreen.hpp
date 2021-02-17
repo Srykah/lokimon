@@ -5,7 +5,7 @@
  */
 #pragma once
 
-#include <loki/gui/textBox/TextBoxController.hpp>
+#include <loki/gui/textBox/EventTextBoxController.hpp>
 #include <models/gameplay/Trainer.hpp>
 #include <screens/base/BaseScreen.hpp>
 #include <screens/battle/main/BattleScreenView.hpp>
@@ -36,7 +36,7 @@ class BattleScreen : public BaseScreen {
   const Attack* playerMove = nullptr;
   const Attack* opponentMove = nullptr;
   const Screen* childScreen = nullptr;
-  loki::gui::TextBoxController textBox;
+  loki::gui::EventTextBoxController textBox;
 };
 
 }  // namespace mon
