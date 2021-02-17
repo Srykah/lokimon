@@ -1,0 +1,14 @@
+{ "columns":3,
+ "image":"..\/..\/..\/..\/..\/..\/..\/assets\/top-down-collection-pack\/Topview Fantasy Patreon Collection\/Top-Down-Forest\/PNG\/top-down-forest-tileset.png",
+ "imageheight":352,
+ "imagewidth":48,
+ "margin":0,
+ "name":"forest",
+ "spacing":0,
+ "tilecount":66,
+ "tiledversion":"1.4.2",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":1.4
+}
