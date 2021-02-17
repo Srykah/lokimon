@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <loki/gui/textBox/TextBoxController.hpp>
-#include <screens/base/BaseScreen.hpp>
+#include <loki/gui/textBox/EventTextBoxController.hpp>
 #include <models/gameplay/Trainer.hpp>
+#include <screens/base/BaseScreen.hpp>
 
 namespace mon {
 
@@ -17,7 +17,7 @@ class BattleIntroScreen : public BaseScreen {
                     const Trainer& trainer,
                     const Monster& playerMonster,
                     const Monster& trainerMonster,
-                    loki::gui::TextBoxController& textBox);
+                    loki::gui::EventTextBoxController& textBox);
   ~BattleIntroScreen() override = default;
 
   bool update(sf::Time delta) override;
@@ -25,7 +25,7 @@ class BattleIntroScreen : public BaseScreen {
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
-  loki::gui::TextBoxController& textBox;
+  loki::gui::EventTextBoxController& textBox;
 };
 
 }  // namespace mon

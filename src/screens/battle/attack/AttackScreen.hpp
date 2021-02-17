@@ -5,9 +5,10 @@
  */
 #pragma once
 
-#include <loki/gui/textBox/TextBoxController.hpp>
+#include <loki/gui/textBox/EventTextBoxController.hpp>
 #include <screens/base/BaseScreen.hpp>
 #include <screens/battle/main/BattleScreenView.hpp>
+
 namespace mon {
 
 class AttackScreen : public BaseScreen {
@@ -17,7 +18,7 @@ class AttackScreen : public BaseScreen {
                const Attack& playerMove,
                Monster& opponentMonster,
                const Attack& opponentMove,
-               loki::gui::TextBoxController& textBox,
+               loki::gui::EventTextBoxController& textBox,
                BattleScreenView& parentView);
   ~AttackScreen() override = default;
 
@@ -40,7 +41,7 @@ class AttackScreen : public BaseScreen {
   static std::string getShownName(const Monster& monster);
 
  private:
-  loki::gui::TextBoxController& textBox;
+  loki::gui::EventTextBoxController& textBox;
   BattleScreenView& parentView;
   Monster& playerMonster;
   const Attack& playerMove;

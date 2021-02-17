@@ -13,7 +13,7 @@ AttackScreen::AttackScreen(Application& app,
                            const Attack& playerMove,
                            Monster& opponentMonster,
                            const Attack& opponentMove,
-                           loki::gui::TextBoxController& textBox,
+                           loki::gui::EventTextBoxController& textBox,
                            BattleScreenView& parentView)
     : BaseScreen(app),
       textBox(textBox),

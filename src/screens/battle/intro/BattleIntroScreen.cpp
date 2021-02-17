@@ -12,7 +12,7 @@ BattleIntroScreen::BattleIntroScreen(Application& app,
                                      const Trainer& trainer,
                                      const Monster& playerMonster,
                                      const Monster& trainerMonster,
-                                     loki::gui::TextBoxController& textBox)
+                                     loki::gui::EventTextBoxController& textBox)
 : BaseScreen(app)
 , textBox(textBox) {
   auto str = fmt::format(
