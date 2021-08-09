@@ -6,7 +6,7 @@
 #include "AttackList.hpp"
 #include <core/path.hpp>
 #include <fstream>
-#include <loki/common/IterAadapters.hpp>
+#include <loki/common/IterAdapters.hpp>
 
 namespace {
 const std::string ATTACK_DATA_VERSION{"0.1"};

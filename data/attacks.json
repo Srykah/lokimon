@@ -19,9 +19,7 @@
         {
           "type": "PHYSICAL",
           "family": "BIRD",
-          "power": 10,
-          "crit": 3,
-          "fail": 1
+          "power": 10
         }
       ]
     },
@@ -41,9 +39,7 @@
         {
           "type": "ELEMENTAL",
           "element": "FIRE",
-          "power": 12,
-          "crit": 2,
-          "fail": 1
+          "power": 12
         }
       ]
     },
@@ -63,9 +59,7 @@
         {
           "type": "ELEMENTAL",
           "element": "ICE",
-          "power": 15,
-          "crit": 0,
-          "fail": 3
+          "power": 15
         }
       ]
     }

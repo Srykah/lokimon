@@ -32,7 +32,7 @@ struct ElementalEffect : public OffensiveEffect {
 
 struct Attack {
   using Effect = std::variant<PhysicalEffect, ElementalEffect>;
-  enum class Range { SELF, ALLY, ALLIES, ENEMY, ENEMIES, TARGET, ALL };
+  enum class Range { SELF, ALLY, ALL_ALLIES, ENEMY, ALL_ENEMIES, ANY, ALL };
 
   void load(const nlohmann::json& attackData);
 
