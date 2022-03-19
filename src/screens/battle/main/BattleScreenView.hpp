@@ -5,12 +5,14 @@
  */
 #pragma once
 
+#if 0
+
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Time.hpp>
 #include <core/ViewData.hpp>
-#include <loki/gui/textBox/TextBox.hpp>
+#include <loki/gui/textBox/TextBoxView.hpp>
 #include <models/data/Elements.hpp>
 #include <models/gameplay/Monster.hpp>
 #include <models/gameplay/Player.hpp>
@@ -30,14 +32,18 @@ class BattleScreenView : public sf::Drawable {
 
   void updateHPTexts();
 
-  [[nodiscard]] loki::gui::TextBox* getTextBox();
+  [[nodiscard]] loki::gui::TextBoxView& getTextBox();
 
  private:
+  static const loki::styles::ShapeStyle FRAME_STYLE;
+
   const Monster* playerMonster = nullptr;
   const Monster* opponentMonster = nullptr;
   sf::RectangleShape playerMonsterShape, opponentMonsterShape;
   sf::Text playerMonsterHPText, opponentMonsterHPText;
-  loki::gui::TextBox textBox;
+  loki::gui::TextBoxView textBox;
 };
 
 }
+
+#endif

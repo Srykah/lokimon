@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "format_version": "0.1",
+    "lang": "fr-fr"
+  },
+  "strings": {
+    "attacks": {
+      "BeakHit": {
+        "name": "Coup d'Bec",
+        "desc": "Un coup puissant du bec."
+      },
+      "FireAsh": {
+        "name": "Cendres brûlantes",
+        "desc": "Des cendres très chaudes qui brûlent l'ennemi."
+      },
+      "IceShard": {
+        "name": "Éclat de givre",
+        "desc": "Des éclats de glace coupants et gelants"
+      }
+    },
+    "species": {
+      "FireBird": {
+        "name": "OizoFeu"
+      },
+      "EarthReptile": {
+        "name": "Repterre"
+      },
+      "IceBeast": {
+        "name": "Brrrête"
+      }
+    }
+  }
+}

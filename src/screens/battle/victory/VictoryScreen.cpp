@@ -10,12 +10,8 @@ namespace mon {
 VictoryScreen::VictoryScreen(Application& app) : BaseScreen(app) {}
 
 bool VictoryScreen::update(sf::Time delta) {
-  closeThisState();
+  closeThisScreen();
   return false;
-}
-
-bool VictoryScreen::updateView(sf::Time delta) {
-  return true;
 }
 
 bool VictoryScreen::render(sf::RenderTarget& target,
@@ -23,4 +19,4 @@ bool VictoryScreen::render(sf::RenderTarget& target,
   return true;
 }
 
-}
+}  // namespace mon

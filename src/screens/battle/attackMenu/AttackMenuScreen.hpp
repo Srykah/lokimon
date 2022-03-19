@@ -6,7 +6,9 @@
 #pragma once
 
 #include <functional>
-#include <loki/gui/list/ListController.hpp>
+#include <loki/gui/containers/grid/Grid.hpp>
+#include <loki/gui/elements/textBox/TextBox.hpp>
+#include <loki/strings/tpl/TemplateEngine.hpp>
 #include <models/data/Attack.hpp>
 #include <models/gameplay/Monster.hpp>
 #include <screens/base/BaseScreen.hpp>
@@ -17,17 +19,20 @@ namespace mon {
 class AttackMenuScreen : public BaseScreen {
  public:
   AttackMenuScreen(Application& app,
-                        const Monster& monster);
+                   const Monster& monster,
+                   const loki::tpl::TemplateEngine& tpl,
+                   loki::gui::TextBox& textBox);
   ~AttackMenuScreen() override = default;
 
   bool update(sf::Time delta) override;
-  bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
-  loki::gui::ListController menu;
-  AttackMenuScreenView view;
   const Monster& monster;
+  bool introDone = false;
+  loki::gui::Grid menu;
+  const loki::tpl::TemplateEngine& tpl;
+  loki::gui::TextBox& textBox;
 };
 
 }  // namespace mon

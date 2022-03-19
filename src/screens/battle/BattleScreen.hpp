@@ -5,10 +5,11 @@
  */
 #pragma once
 
-#include <loki/gui/textBox/EventTextBoxController.hpp>
-#include <models/gameplay/Trainer.hpp>
-#include <screens/base/BaseScreen.hpp>
-#include <screens/battle/main/BattleScreenView.hpp>
+#include <loki/gui/elements/textBox/TextBox.hpp>
+#include <loki/strings/tpl/TemplateEngine.hpp>
+#include "models/gameplay/Trainer.hpp"
+#include "screens/base/BaseScreen.hpp"
+#include "screens/battle/main/BattleScreenView.hpp"
 
 namespace mon {
 
@@ -19,7 +20,6 @@ class BattleScreen : public BaseScreen {
   void init() override;
 
   bool update(sf::Time delta) override;
-  bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
@@ -29,14 +29,15 @@ class BattleScreen : public BaseScreen {
   bool onAttackClose();
 
  private:
-  BattleScreenView view;
+  // BattleScreenView view;
   Trainer opponent;
   Monster* playerMonster = nullptr;
   Monster* opponentMonster = nullptr;
   const Attack* playerMove = nullptr;
   const Attack* opponentMove = nullptr;
   const Screen* childScreen = nullptr;
-  loki::gui::EventTextBoxController textBox;
+  loki::tpl::TemplateEngine tpl;
+  loki::gui::TextBox textBox;
 };
 
 }  // namespace mon

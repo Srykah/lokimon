@@ -14,8 +14,7 @@ class GameOverScreen : public BaseScreen {
   ~GameOverScreen() override = default;
 
   bool update(sf::Time delta) override;
-  bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
 
-}
+}  // namespace mon

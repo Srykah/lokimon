@@ -10,17 +10,15 @@
 
 namespace mon {
 
-enum class AttackIndex : int { NONE = -1 };
-
 class AttackList {
  public:
   AttackList() = default;
 
   void load();
-  [[nodiscard]] const Attack& getAttack(AttackIndex index) const;
+  [[nodiscard]] const Attack& getAttack(std::string id) const;
 
  private:
-  std::vector<mon::Attack> attacks;
+  std::unordered_map<std::string, mon::Attack> attacks;
 };
 
 }

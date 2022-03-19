@@ -10,15 +10,13 @@ namespace mon {
 GameOverScreen::GameOverScreen(Application& app) : BaseScreen(app) {}
 
 bool GameOverScreen::update(sf::Time delta) {
-  closeThisState();
+  closeThisScreen();
   return false;
 }
-bool GameOverScreen::updateView(sf::Time delta) {
-  return true;
-}
+
 bool GameOverScreen::render(sf::RenderTarget& target,
                             sf::RenderStates states) const {
   return true;
 }
 
-}
+}  // namespace mon

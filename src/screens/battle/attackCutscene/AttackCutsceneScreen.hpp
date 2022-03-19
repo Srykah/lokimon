@@ -5,25 +5,26 @@
  */
 #pragma once
 
-#include <loki/gui/textBox/EventTextBoxController.hpp>
+#include <loki/gui/elements/textBox/TextBox.hpp>
 #include <screens/base/BaseScreen.hpp>
 #include <screens/battle/main/BattleScreenView.hpp>
 
+namespace loki::gui {
+class TextBox;
+}
+
 namespace mon {
 
-class AttackScreen : public BaseScreen {
+class AttackCutsceneScreen : public BaseScreen {
  public:
-  AttackScreen(Application& app,
-               Monster& playerMonster,
-               const Attack& playerMove,
-               Monster& opponentMonster,
-               const Attack& opponentMove,
-               loki::gui::EventTextBoxController& textBox,
-               BattleScreenView& parentView);
-  ~AttackScreen() override = default;
+  AttackCutsceneScreen(Application& app,
+                       Monster& playerMonster,
+                       const Attack& playerMove,
+                       Monster& opponentMonster,
+                       const Attack& opponentMove,
+                       loki::gui::TextBox& textBox);
 
   bool update(sf::Time delta) override;
-  bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
@@ -36,13 +37,11 @@ class AttackScreen : public BaseScreen {
                    const Monster& defender,
                    const Attack& attack,
                    int damage,
-                   bool crit,
                    Effectiveness effectiveness);
   static std::string getShownName(const Monster& monster);
 
  private:
-  loki::gui::EventTextBoxController& textBox;
-  BattleScreenView& parentView;
+  loki::gui::TextBox& textBox;
   Monster& playerMonster;
   const Attack& playerMove;
   Monster& opponentMonster;

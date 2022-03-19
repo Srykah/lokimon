@@ -5,6 +5,7 @@
  */
 #pragma once
 
+#include <array>
 #include <vector>
 #include "Monster.hpp"
 #include "models/data/Constants.hpp"
@@ -17,12 +18,12 @@ class Player {
 
   void load();
   [[nodiscard]] const std::string& getName() const { return name; }
-  [[nodiscard]] Monster* getPartyMonster(unsigned int index);
+  [[nodiscard]] Monster& getPartyMonster(unsigned int index);
 
  private:
   std::string name;
   std::vector<Monster> box;
-  int party[PARTY_SIZE];
+  std::array<int, PARTY_SIZE> party;
   const GameData& gameData;
 };
 

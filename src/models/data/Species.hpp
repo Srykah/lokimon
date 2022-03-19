@@ -5,6 +5,7 @@
  */
 #pragma once
 
+#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
 #include "Attack.hpp"
@@ -15,13 +16,23 @@
 namespace mon {
 
 struct Species {
-  TranslatedString names;
+  struct MovepoolEntry {
+    std::string id;
+    int level;
+  };
+
+  std::string id;
   Stats baseStats;
   Element element;
   Family family;
-  std::vector<std::pair<unsigned int, AttackIndex>> availableAttacksPerLevel;
-
-  void load(const nlohmann::json& speciesData);
+  std::vector<MovepoolEntry> movepool;
 };
 
-}
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Species::MovepoolEntry, id, level)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Species,
+                                   baseStats,
+                                   element,
+                                   family,
+                                   movepool)
+
+}  // namespace mon
