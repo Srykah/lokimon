@@ -19,6 +19,9 @@ void Player::load() {
     index = -1;
   }
   party[0] = 0;
+  mapStatus.mapName = "test";
+  mapStatus.pos = sf::Vector2i{8, 6};
+  mapStatus.facing = Direction::DOWN;
 }
 
 Monster& Player::getPartyMonster(unsigned int index) {
