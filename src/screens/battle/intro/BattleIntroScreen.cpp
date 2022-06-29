@@ -8,40 +8,23 @@
 
 namespace mon {
 
-BattleIntroScreen::BattleIntroScreen(Application& app,
-                                     const Trainer& trainer,
-                                     const Monster& playerMonster,
-                                     const Monster& trainerMonster,
-                                     loki::gui::TextBoxController& textBox)
-: BaseScreen(app)
-, textBox(textBox) {
-  auto str = fmt::format(
-      "Welcome, {0}!\n"
-      "Trainer {1} wants to battle!\n\n"
-      "Trainer {1} sends {2}!\n\n"
-      "Go, {3}!",
-      getPlayer().getName(),
-      trainer.getName(),
-      trainerMonster.getName(),
-      playerMonster.getName());
-  textBox.setString(str);
+BattleIntroScreen::BattleIntroScreen(Application& app, BattleContext& ctx)
+    : BaseScreen(app), ctx(ctx) {
+  ctx.textBox.setAnnotatedString(ctx.tpl.fill(
+      getViewData().getI18nStr("/messages/battle/intro"_json_pointer)));
 }
 
 bool BattleIntroScreen::update(sf::Time delta) {
-  textBox.handleInputs();
-  if (textBox.hasEnded()) {
-    closeThisState();
+  ctx.textBox.update(delta);
+  if (ctx.textBox.isActive()) {
+    closeThisScreen();
   }
   return false;
 }
 
-bool BattleIntroScreen::updateView(sf::Time delta) {
-  return true;
-}
-
 bool BattleIntroScreen::render(sf::RenderTarget& target,
-                                    sf::RenderStates states) const {
+                               sf::RenderStates states) const {
   return true;
 }
 
-}
+}  // namespace mon

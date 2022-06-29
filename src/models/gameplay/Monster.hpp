@@ -10,7 +10,7 @@
 #include "models/data/Constants.hpp"
 #include "models/data/Elements.hpp"
 #include "models/data/SpeciesList.hpp"
-#include "models/gameplay/BattleData.hpp"
+#include "models/gameplay/MonsterBattleData.hpp"
 
 namespace mon {
 
@@ -18,18 +18,21 @@ class GameData;
 
 class Monster {
  public:
+  using Moveset = std::array<std::string, MOVESET_SIZE>;
+
+ public:
   Monster(std::string name,
-          SpeciesIndex index,
+          std::string speciesId,
           bool isAlly,
           const GameData& gameData);
 
-  void setAttack(unsigned int index, AttackIndex attack) {
-    attacks[index] = attack;
-  }
+  void setAttack(unsigned int movesetIndex, std::string attackId);
 
   [[nodiscard]] const std::string& getName() const { return name; }
   [[nodiscard]] bool isAlly() const { return ally; }
-  [[nodiscard]] const Attack* getAttack(unsigned int index) const;
+  [[nodiscard]] int getLevel() const { return level; }
+  [[nodiscard]] const Moveset& getMoveset() const { return moveset; }
+  [[nodiscard]] const Attack& getAttack(unsigned int movesetIndex) const;
   [[nodiscard]] int getCurrentHP() const { return battleData.HP; }
   [[nodiscard]] const Stats& getStats() const { return stats; }
   [[nodiscard]] Element getElement() const;
@@ -37,14 +40,14 @@ class Monster {
 
   void loseHP(int i);
 
-
  private:
   std::string name;
-  SpeciesIndex speciesIndex;
+  std::string speciesId;
   bool ally;
+  int level;
   Stats stats;
-  BattleData battleData;
-  AttackIndex attacks[MOVESET_SIZE];
+  MonsterBattleData battleData;
+  Moveset moveset;
   const GameData& gameData;
 };
 

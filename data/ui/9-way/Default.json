@@ -1,0 +1,15 @@
+{
+  "columns":3,
+  "image":"..\/..\/..\/assets\/tilesets\/Frame.png",
+  "imageheight":24,
+  "imagewidth":24,
+  "margin":0,
+  "name":"Default",
+  "spacing":0,
+  "tilecount":9,
+  "tiledversion":"1.4.2",
+  "tileheight":8,
+  "tilewidth":8,
+  "type":"tileset",
+  "version":1.4
+}

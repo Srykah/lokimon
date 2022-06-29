@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <loki/input/service/EventHandler.hpp>
-#include <loki/screens/ScreenStack.hpp>
-#include <loki/window/Window.hpp>
+#include <loki/system/input/service/EventHandler.hpp>
+#include <loki/system/screens/ScreenStack.hpp>
+#include <loki/system/window/Window.hpp>
 #include <models/data/GameData.hpp>
 #include "ViewData.hpp"
 #include "models/gameplay/Player.hpp"

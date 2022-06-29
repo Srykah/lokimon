@@ -9,17 +9,15 @@
 
 namespace mon {
 
-enum class SpeciesIndex : unsigned int;
-
 class SpeciesList {
  public:
   SpeciesList() = default;
 
   void load();
-  [[nodiscard]] const Species& getSpecies(SpeciesIndex index) const;
+  [[nodiscard]] const Species& getSpecies(std::string id) const;
 
  private:
-  std::vector<Species> species;
+  std::unordered_map<std::string, Species> species;
 };
 
 }

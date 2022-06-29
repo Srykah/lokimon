@@ -16,8 +16,8 @@ struct Stats {
   int elemAtk;
   int elemDef;
   int speed;
-
-  void load(const nlohmann::json& statsData);
 };
+
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Stats, HP, atk, def, elemAtk, elemDef, speed)
 
 }  // namespace mon

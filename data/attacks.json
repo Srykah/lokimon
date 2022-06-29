@@ -1,17 +1,9 @@
 {
   "meta": {
-    "version": "0.1"
+    "format_version": "0.2"
   },
-  "attacks": [
-    {
-      "names": {
-        "en": "BeakHit",
-        "fr": "Coup d'bec"
-      },
-      "descriptions": {
-        "en": "A powerful hit of the beak.",
-        "fr": "Un coup puissant du bec."
-      },
+  "attacks": {
+    "BeakHit": {
       "range": "ENEMY",
       "cost": 1,
       "speed": 0,
@@ -19,21 +11,11 @@
         {
           "type": "PHYSICAL",
           "family": "BIRD",
-          "power": 10,
-          "crit": 3,
-          "fail": 1
+          "power": 10
         }
       ]
     },
-    {
-      "names": {
-        "en": "FireAsh",
-        "fr": "Cendres brûlantes"
-      },
-      "descriptions": {
-        "en": "Really hot ashes that burn the enemy",
-        "fr": "Des cendres très chaudes qui brûlent l'ennemi."
-      },
+    "FireAsh": {
       "range": "ENEMY",
       "cost": 1,
       "speed": 0,
@@ -41,21 +23,11 @@
         {
           "type": "ELEMENTAL",
           "element": "FIRE",
-          "power": 12,
-          "crit": 2,
-          "fail": 1
+          "power": 12
         }
       ]
     },
-    {
-      "names": {
-        "en": "IceShard",
-        "fr": "Éclat de givre"
-      },
-      "descriptions": {
-        "en": "Sharp ice shards that cut and freeze",
-        "fr": "Des éclats de glace coupants et gelants"
-      },
+    "IceShard": {
       "range": "ENEMY",
       "cost": 1,
       "speed": 0,
@@ -63,11 +35,9 @@
         {
           "type": "ELEMENTAL",
           "element": "ICE",
-          "power": 15,
-          "crit": 0,
-          "fail": 3
+          "power": 15
         }
       ]
     }
-  ]
+  }
 }

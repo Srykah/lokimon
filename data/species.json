@@ -1,13 +1,9 @@
 {
   "meta": {
-    "version": "0.1"
+    "format_version": "0.2"
   },
-  "species": [
-    {
-      "names": {
-        "en": "FireBird",
-        "fr": "OizoFeu"
-      },
+  "species": {
+    "FireBird": {
       "baseStats": {
         "HP": 30,
         "atk": 12,
@@ -18,22 +14,18 @@
       },
       "element": "FIRE",
       "family": "BIRD",
-      "attacks": [
-        [
-          1,
-          0
-        ],
-        [
-          1,
-          1
-        ]
+      "movepool": [
+        {
+          "id": "FireAsh",
+          "level": 1
+        },
+        {
+          "id": "BeakHit",
+          "level": 1
+        }
       ]
     },
-    {
-      "names": {
-        "en": "EarthReptile",
-        "fr": "Repterre"
-      },
+    "EarthReptile": {
       "baseStats": {
         "HP": 40,
         "atk": 8,
@@ -44,13 +36,9 @@
       },
       "element": "EARTH",
       "family": "REPT",
-      "attacks": []
+      "movepool": []
     },
-    {
-      "names": {
-        "en": "IceBeast",
-        "fr": "Brrrête"
-      },
+    "IceBeast": {
       "baseStats": {
         "HP": 25,
         "atk": 10,
@@ -61,12 +49,12 @@
       },
       "element": "ICE",
       "family": "BEAST",
-      "attacks": [
-        [
-          1,
-          2
-        ]
+      "movepool": [
+        {
+          "id": "IceShard",
+          "level": 1
+        }
       ]
     }
-  ]
+  }
 }

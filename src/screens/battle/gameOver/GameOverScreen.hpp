@@ -6,16 +6,17 @@
 #pragma once
 
 #include <screens/base/BaseScreen.hpp>
+#include <models/gameplay/BattleContext.hpp>
+
 namespace mon {
 
 class GameOverScreen : public BaseScreen {
  public:
-  explicit GameOverScreen(Application& app);
+  explicit GameOverScreen(Application& app, BattleContext& ctx);
   ~GameOverScreen() override = default;
 
   bool update(sf::Time delta) override;
-  bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 };
 
-}
+}  // namespace mon

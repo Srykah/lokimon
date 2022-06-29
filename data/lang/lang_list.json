@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "format_version": "0.1"
+  },
+  "langs": {
+    "en-us": {
+      "name": "English (US)",
+      "filepath": "lang_en-us.json"
+    },
+    "fr-fr": {
+      "name": "Français (FR)",
+      "filepath": "lang_fr-fr.json"
+    }
+  }
+}

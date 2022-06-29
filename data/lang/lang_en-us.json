@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "format_version": "0.1",
+    "lang": "en-us"
+  },
+  "strings": {
+    "species": {
+      "FireBird": {
+        "name": "FireBird"
+      },
+      "EarthReptile": {
+        "name": "EarthReptile"
+      },
+      "IceBeast": {
+        "name": "IceBeast"
+      }
+    },
+    "attacks": {
+      "BeakHit": {
+        "name": "BeakHit",
+        "desc": "A powerful hit of the beak."
+      },
+      "FireAsh": {
+        "name": "FireAsh",
+        "desc": "Really hot ashes that burn the enemy"
+      },
+      "IceShard": {
+        "name": "IceShard",
+        "desc": "Sharp ice shards that cut and freeze"
+      }
+    },
+    "messages": {
+      "battle": {
+        "intro": "Welcome, {playerName}!\nTrainer {trainerName} wants to battle!\fTrainer {trainerName} sends {trainerMonster}!\fGo, {playerMonster}!"
+      }
+    }
+  }
+}

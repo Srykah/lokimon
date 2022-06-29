@@ -4,18 +4,18 @@
  * \copyright GNU GPL v3.0
  */
 #include "BaseScreen.hpp"
-#include <loki/screens/ScreenStack.hpp>
+#include <loki/system/screens/ScreenStack.hpp>
 
 namespace mon {
 
-BaseScreen::BaseScreen(Application& app) : Screen(app.stack), app(app) {}
+BaseScreen::BaseScreen(Application& app) : app(app) {}
 
-Player& BaseScreen::getPlayer() const {
+const Player& BaseScreen::getPlayer() const {
   return app.player;
 }
 
-void BaseScreen::clearStates() {
-  stack.clear();
+Player& BaseScreen::getPlayer() {
+  return app.player;
 }
 
 const GameData& BaseScreen::getGameData() const {
@@ -26,24 +26,12 @@ const ViewData& BaseScreen::getViewData() const {
   return app.viewData;
 }
 
-loki::input::EventHandler& BaseScreen::getEventHandler() {
+const loki::input::EventHandler& BaseScreen::getEventHandler() const {
   return app.eventHandler;
 }
 
-void BaseScreen::sendSignal(const std::string& signalName) {
-  stack.sendSignal({this, signalName});
+loki::screens::ScreenStack& BaseScreen::getScreenStack() {
+  return app.stack;
 }
 
-void BaseScreen::closeState(const loki::screens::Screen* screen) {
-  stack.close(screen);
-}
-
-void BaseScreen::closeStatesAbove() {
-  stack.closeAbove(this);
-}
-
-void BaseScreen::closeThisState() {
-  stack.close(this);
-}
-
-}
+}  // namespace mon

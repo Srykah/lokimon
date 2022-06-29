@@ -7,17 +7,16 @@
 
 namespace mon {
 
-GameOverScreen::GameOverScreen(Application& app) : BaseScreen(app) {}
+GameOverScreen::GameOverScreen(Application& app, BattleContext& ctx) : BaseScreen(app) {}
 
 bool GameOverScreen::update(sf::Time delta) {
+  closeThisScreen();
   return false;
 }
-bool GameOverScreen::updateView(sf::Time delta) {
-  return true;
-}
+
 bool GameOverScreen::render(sf::RenderTarget& target,
                             sf::RenderStates states) const {
   return true;
 }
 
-}
+}  // namespace mon

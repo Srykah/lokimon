@@ -12,17 +12,9 @@ namespace mon {
 
 class GameData {
  public:
-  [[nodiscard]] const Species& getSpecies(SpeciesIndex index) const {
-    return speciesList.getSpecies(index);
-  }
-  [[nodiscard]] const Attack& getAttack(AttackIndex index) const {
-    return attackList.getAttack(index);
-  }
-
-  void load() {
-    attackList.load();
-    speciesList.load();
-  }
+  void load();
+  [[nodiscard]] const Species& getSpecies(std::string id) const;
+  [[nodiscard]] const Attack& getAttack(std::string id) const;
 
  private:
   SpeciesList speciesList;
