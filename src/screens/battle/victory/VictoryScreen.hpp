@@ -6,11 +6,13 @@
 #pragma once
 
 #include <screens/base/BaseScreen.hpp>
+#include <models/gameplay/BattleContext.hpp>
+
 namespace mon {
 
 class VictoryScreen : public BaseScreen {
  public:
-  explicit VictoryScreen(Application& app);
+  explicit VictoryScreen(Application& app, BattleContext& ctx);
   ~VictoryScreen() override = default;
 
   bool update(sf::Time delta) override;

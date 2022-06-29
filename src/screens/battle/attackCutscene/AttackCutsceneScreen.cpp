@@ -8,24 +8,14 @@
 
 namespace mon {
 
-AttackCutsceneScreen::AttackCutsceneScreen(Application& app,
-                                           Monster& playerMonster,
-                                           const Attack& playerMove,
-                                           Monster& opponentMonster,
-                                           const Attack& opponentMove,
-                                           loki::gui::TextBox& textBox)
-    : BaseScreen(app),
-      textBox(textBox),
-      playerMonster(playerMonster),
-      playerMove(playerMove),
-      opponentMonster(opponentMonster),
-      opponentMove(opponentMove) {
+AttackCutsceneScreen::AttackCutsceneScreen(Application& app, BattleContext& ctx)
+    : BaseScreen(app), ctx(ctx) {
   damageStep();
 }
 
 bool AttackCutsceneScreen::update(sf::Time delta) {
-  textBox.update(delta);
-  if (textBox.isActive()) {
+  ctx.textBox.update(delta);
+  if (ctx.textBox.isActive()) {
     closeThisScreen();
   }
   return false;
@@ -37,18 +27,23 @@ bool AttackCutsceneScreen::render(sf::RenderTarget& target,
 }
 
 void AttackCutsceneScreen::damageStep() {
-  if (playerMove.speed > opponentMove.speed ||
-      playerMonster.getStats().speed >= opponentMonster.getStats().speed) {
+  if (ctx.playerMove->speed > ctx.opponentMove->speed ||
+      ctx.playerMonster->getStats().speed >=
+          ctx.opponentMonster->getStats().speed) {
     // player attackCutscene first
-    computeAndPrintDamage(playerMonster, playerMove, opponentMonster);
-    if (opponentMonster.getCurrentHP() > 0) {
-      computeAndPrintDamage(opponentMonster, opponentMove, playerMonster);
+    computeAndPrintDamage(*ctx.playerMonster, *ctx.playerMove,
+                          *ctx.opponentMonster);
+    if (ctx.opponentMonster->getCurrentHP() > 0) {
+      computeAndPrintDamage(*ctx.opponentMonster, *ctx.opponentMove,
+                            *ctx.playerMonster);
     }
   } else {
     // opponent attackCutscene first
-    computeAndPrintDamage(opponentMonster, opponentMove, playerMonster);
-    if (playerMonster.getCurrentHP() > 0) {
-      computeAndPrintDamage(playerMonster, playerMove, opponentMonster);
+    computeAndPrintDamage(*ctx.opponentMonster, *ctx.opponentMove,
+                          *ctx.playerMonster);
+    if (ctx.playerMonster->getCurrentHP() > 0) {
+      computeAndPrintDamage(*ctx.playerMonster, *ctx.playerMove,
+                            *ctx.opponentMonster);
     }
   }
   // parentView.updateHPTexts();
@@ -95,7 +90,7 @@ void AttackCutsceneScreen::computeAndPrintDamage(Monster& attacker,
 
 void AttackCutsceneScreen::printFailedAttack(const Monster& attacker,
                                              const Attack& attack) {
-  textBox.setAnnotatedString(
+  ctx.textBox.setAnnotatedString(
       getShownName(attacker) + " uses " +
       getViewData().getI18nStr("/attacks/{}/name", attack.id) +
       "!\n\nBut it failed...");
@@ -131,7 +126,7 @@ void AttackCutsceneScreen::printAttack(const Monster& attacker,
   }
   str += getShownName(defender) + " looses " + std::to_string(damage) + " HP!";
 
-  textBox.setAnnotatedString(str);
+  ctx.textBox.setAnnotatedString(str);
 }
 
 std::string AttackCutsceneScreen::getShownName(const Monster& monster) {

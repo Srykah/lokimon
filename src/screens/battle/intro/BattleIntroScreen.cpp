@@ -8,20 +8,15 @@
 
 namespace mon {
 
-BattleIntroScreen::BattleIntroScreen(Application& app,
-                                     const Trainer& trainer,
-                                     const Monster& playerMonster,
-                                     const Monster& trainerMonster,
-                                     loki::tpl::TemplateEngine& tpl,
-                                     loki::gui::TextBox& textBox)
-    : BaseScreen(app), textBox(textBox) {
-  textBox.setAnnotatedString(tpl.fill(
+BattleIntroScreen::BattleIntroScreen(Application& app, BattleContext& ctx)
+    : BaseScreen(app), ctx(ctx) {
+  ctx.textBox.setAnnotatedString(ctx.tpl.fill(
       getViewData().getI18nStr("/messages/battle/intro"_json_pointer)));
 }
 
 bool BattleIntroScreen::update(sf::Time delta) {
-  textBox.update(delta);
-  if (textBox.isActive()) {
+  ctx.textBox.update(delta);
+  if (ctx.textBox.isActive()) {
     closeThisScreen();
   }
   return false;

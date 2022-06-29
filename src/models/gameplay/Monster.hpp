@@ -10,7 +10,7 @@
 #include "models/data/Constants.hpp"
 #include "models/data/Elements.hpp"
 #include "models/data/SpeciesList.hpp"
-#include "models/gameplay/BattleData.hpp"
+#include "models/gameplay/MonsterBattleData.hpp"
 
 namespace mon {
 
@@ -46,7 +46,7 @@ class Monster {
   bool ally;
   int level;
   Stats stats;
-  BattleData battleData;
+  MonsterBattleData battleData;
   Moveset moveset;
   const GameData& gameData;
 };

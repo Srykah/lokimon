@@ -13,18 +13,22 @@
 namespace mon {
 
 BattleScreen::BattleScreen(Application& app, Trainer _opponent)
-    : BaseScreen(app),
-      opponent(std::move(_opponent)),
-      playerMonster(&getPlayer().getPartyMonster(0)),
-      opponentMonster(&opponent.getMonster(0)),
-      textBox(getEventHandler(), "ok") {
+    : BaseScreen(app), ctx {
+      .opponent = std::move(_opponent),
+      .playerMonster = &getPlayer().getPartyMonster(0),
+      .opponentMonster = &ctx.opponent.getMonster(0),
+      .playerMove = nullptr,
+      .opponentMove = nullptr,
+      .tpl {},
+      .textBox{getEventHandler(), "ok"}
+    } {
   // view.setPlayerMonster(playerMonster);
   // view.setOpponentMonster(opponentMonster);
 
-  tpl.addRef("playerName", getPlayer().getName());
-  tpl.addRef("playerMonster", playerMonster->getName());
-  tpl.addRef("trainerName", opponent.getName());
-  tpl.addRef("trainerMonster", opponentMonster->getName());
+  ctx.tpl.addRef("playerName", getPlayer().getName());
+  ctx.tpl.addRef("playerMonster", ctx.playerMonster->getName());
+  ctx.tpl.addRef("trainerName", ctx.opponent.getName());
+  ctx.tpl.addRef("trainerMonster", ctx.opponentMonster->getName());
 }
 
 void BattleScreen::init() {
@@ -32,8 +36,7 @@ void BattleScreen::init() {
 
   // view.updateHPTexts();
 
-  childScreen = pushScreen<BattleIntroScreen>(app, opponent, *playerMonster,
-                                              *opponentMonster, tpl, textBox);
+  childScreen = pushScreen<BattleIntroScreen>(app, ctx);
   registerSignalHandler({childScreen, "close"},
                         [this]() { return onIntroClose(); });
 }
@@ -49,12 +52,12 @@ bool BattleScreen::render(sf::RenderTarget& target,
 }
 
 void BattleScreen::chooseOpponentAttack() {
-  opponentMove = &opponentMonster->getAttack(0);
+  ctx.opponentMove = &ctx.opponentMonster->getAttack(0);
 }
 
 bool BattleScreen::onIntroClose() {
   removeSignalHandler({childScreen, "close"});
-  childScreen = pushScreen<AttackMenuScreen>(app, *playerMonster, tpl, textBox);
+  childScreen = pushScreen<AttackMenuScreen>(app, ctx);
   registerSignalHandler({childScreen, "move"},
                         [this](unsigned int i) { return onAttackMenuMove(i); });
   return false;
@@ -62,11 +65,9 @@ bool BattleScreen::onIntroClose() {
 
 bool BattleScreen::onAttackMenuMove(unsigned int index) {
   removeSignalHandler({childScreen, "move"});
-  playerMove = &playerMonster->getAttack(index);
+  ctx.playerMove = &ctx.playerMonster->getAttack(index);
   chooseOpponentAttack();
-  childScreen = pushScreen<AttackCutsceneScreen>(app, *playerMonster,
-                                                 *playerMove, *opponentMonster,
-                                                 *opponentMove, textBox);
+  childScreen = pushScreen<AttackCutsceneScreen>(app, ctx);
   registerSignalHandler({childScreen, "close"},
                         [this]() { return onAttackClose(); });
   return false;
@@ -74,21 +75,20 @@ bool BattleScreen::onAttackMenuMove(unsigned int index) {
 
 bool BattleScreen::onAttackClose() {
   removeSignalHandler({childScreen, "close"});
-  if (playerMonster->getCurrentHP() <= 0) {
-    childScreen = pushScreen<GameOverScreen>(app);
+  if (ctx.playerMonster->getCurrentHP() <= 0) {
+    childScreen = pushScreen<GameOverScreen>(app, ctx);
     registerSignalHandler({childScreen, "close"}, [this]() {
       closeThisScreen();
       return false;
     });
-  } else if (opponentMonster->getCurrentHP() <= 0) {
-    childScreen = pushScreen<VictoryScreen>(app);
+  } else if (ctx.opponentMonster->getCurrentHP() <= 0) {
+    childScreen = pushScreen<VictoryScreen>(app, ctx);
     registerSignalHandler({childScreen, "close"}, [this]() {
       closeThisScreen();
       return false;
     });
   } else {
-    childScreen =
-        pushScreen<AttackMenuScreen>(app, *playerMonster, tpl, textBox);
+    childScreen = pushScreen<AttackMenuScreen>(app, ctx);
     registerSignalHandler({childScreen, "move"}, [this](unsigned int i) {
       return onAttackMenuMove(i);
     });

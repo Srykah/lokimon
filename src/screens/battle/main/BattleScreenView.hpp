@@ -12,7 +12,7 @@
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Time.hpp>
 #include <core/ViewData.hpp>
-#include <loki/gui/textBox/TextBoxView.hpp>
+#include <loki/gui/widgets/textBox/TextBoxView.hpp>
 #include <models/data/Elements.hpp>
 #include <models/gameplay/Monster.hpp>
 #include <models/gameplay/Player.hpp>

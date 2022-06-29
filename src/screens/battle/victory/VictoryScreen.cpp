@@ -7,7 +7,7 @@
 
 namespace mon {
 
-VictoryScreen::VictoryScreen(Application& app) : BaseScreen(app) {}
+VictoryScreen::VictoryScreen(Application& app, BattleContext& ctx) : BaseScreen(app) {}
 
 bool VictoryScreen::update(sf::Time delta) {
   closeThisScreen();

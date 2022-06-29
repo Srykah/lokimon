@@ -7,20 +7,13 @@
 #include <fmt/format.h>
 #include <iostream>
 #include <loki/core/utils/IterAdapters.hpp>
-#include <loki/gui/elements/label/TextLabel.hpp>
+#include <loki/gui/widgets/elements/label/TextLabel.hpp>
 
 namespace mon {
 
-AttackMenuScreen::AttackMenuScreen(Application& app,
-                                   const Monster& monster,
-                                   const loki::tpl::TemplateEngine& tpl,
-                                   loki::gui::TextBox& textBox)
-    : BaseScreen(app),
-      monster(monster),
-      menu({2u, 2u}),
-      tpl(tpl),
-      textBox(textBox) {
-  for (auto&& [i, atkId] : loki::enumerate(monster.getMoveset())) {
+AttackMenuScreen::AttackMenuScreen(Application& app, BattleContext& ctx)
+    : BaseScreen(app), ctx(ctx), menu({2u, 2u}) {
+  for (auto&& [i, atkId] : loki::enumerate(ctx.playerMonster->getMoveset())) {
     if (!atkId.empty()) {
       menu.setItem({static_cast<unsigned int>(i % 2ull),
                     static_cast<unsigned int>(i / 2ull)},
@@ -39,8 +32,8 @@ bool AttackMenuScreen::render(sf::RenderTarget& target,
 
 bool AttackMenuScreen::update(sf::Time delta) {
   if (!introDone) {
-    textBox.update(delta);
-    if (textBox.isActive()) {
+    ctx.textBox.update(delta);
+    if (ctx.textBox.isActive()) {
       // view.showMenu();
       introDone = true;
     }

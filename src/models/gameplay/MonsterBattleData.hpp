@@ -1,5 +1,5 @@
 /*!
- * \file BattleData.hpp
+ * \file MonsterBattleData.hpp
  * \author Srykah
  * \copyright GNU GPL v3.0
  */
@@ -7,7 +7,7 @@
 
 namespace mon {
 
-struct BattleData {
+struct MonsterBattleData {
   int HP = 0;
   int atkMod = 0;
   int defMod = 0;
@@ -17,4 +17,4 @@ struct BattleData {
   int accuracyMod = 0;
 };
 
-}
+}  // namespace mon

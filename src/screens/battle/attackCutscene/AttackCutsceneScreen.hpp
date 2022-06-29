@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <loki/gui/elements/textBox/TextBox.hpp>
+#include <loki/gui/widgets/elements/textBox/TextBox.hpp>
+#include <models/gameplay/BattleContext.hpp>
 #include <screens/base/BaseScreen.hpp>
-#include <screens/battle/main/BattleScreenView.hpp>
 
 namespace loki::gui {
 class TextBox;
@@ -17,12 +17,7 @@ namespace mon {
 
 class AttackCutsceneScreen : public BaseScreen {
  public:
-  AttackCutsceneScreen(Application& app,
-                       Monster& playerMonster,
-                       const Attack& playerMove,
-                       Monster& opponentMonster,
-                       const Attack& opponentMove,
-                       loki::gui::TextBox& textBox);
+  AttackCutsceneScreen(Application& app, BattleContext& ctx);
 
   bool update(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
@@ -41,11 +36,7 @@ class AttackCutsceneScreen : public BaseScreen {
   static std::string getShownName(const Monster& monster);
 
  private:
-  loki::gui::TextBox& textBox;
-  Monster& playerMonster;
-  const Attack& playerMove;
-  Monster& opponentMonster;
-  const Attack& opponentMove;
+  BattleContext& ctx;
 };
 
 }  // namespace mon

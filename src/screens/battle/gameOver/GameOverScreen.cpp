@@ -7,7 +7,7 @@
 
 namespace mon {
 
-GameOverScreen::GameOverScreen(Application& app) : BaseScreen(app) {}
+GameOverScreen::GameOverScreen(Application& app, BattleContext& ctx) : BaseScreen(app) {}
 
 bool GameOverScreen::update(sf::Time delta) {
   closeThisScreen();

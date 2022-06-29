@@ -33,6 +33,10 @@
 
 # IDEs
 .idea
+.vs
+
+# Local config
+CMakeSettings.json
 
 # Output
 *build*/
