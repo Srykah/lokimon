@@ -15,10 +15,10 @@ class AttackList {
   AttackList() = default;
 
   void load();
-  [[nodiscard]] const Attack& getAttack(std::string id) const;
+  [[nodiscard]] const Attack& getAttack(const std::string& id) const;
 
  private:
   std::unordered_map<std::string, mon::Attack> attacks;
 };
 
-}
+}  // namespace mon

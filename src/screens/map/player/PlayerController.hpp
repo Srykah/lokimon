@@ -6,7 +6,7 @@
 #pragma once
 
 #include <screens/base/BaseScreen.hpp>
-#include "../main/MapScreenView.hpp"
+#include "screens/map/main/MapScreen.hpp"
 
 namespace mon {
 
@@ -15,7 +15,7 @@ class PlayerController {
   PlayerController(Player& player,
                    const loki::tiles::MapData& mapData,
                    const loki::input::EventHandler& eventHandler,
-                   MapScreenView& view);
+                   MapScreen& mapScreen);
   void init();
 
   bool update(sf::Time delta);
@@ -25,7 +25,7 @@ class PlayerController {
   Player& player;
   const loki::tiles::MapData& mapData;
   const loki::input::EventHandler& eventHandler;
-  MapScreenView& view;
+  MapScreen& mapScreen;
 };
 
 }  // namespace mon

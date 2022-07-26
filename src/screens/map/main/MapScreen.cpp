@@ -10,9 +10,12 @@
 namespace mon {
 
 MapScreen::MapScreen(Application& app, std::string mapName)
-    : BaseScreen(app), mapName(std::move(mapName)) {}
+    : BaseScreen(app),
+      mapName(std::move(mapName)),
+      playerSprite(getViewData().getPlayerSpriteData(), "idle_down") {}
 
 void MapScreen::init() {
+#if 0
   mapData.load(DATA_PATH / "maps" / (mapName + ".json"),
                [this](const std::filesystem::path& tilesetPath) {
                  tilesetData.load(DATA_PATH / "maps" / tilesetPath);
@@ -23,20 +26,16 @@ void MapScreen::init() {
   view.setPlayerSpriteData(playerSpriteData);
   pushState<PlayerScreen>(mapData, view);
   Screen::init();
+#endif
 }
 
 bool MapScreen::update(sf::Time delta) {
   return false;
 }
 
-bool MapScreen::updateView(sf::Time delta) {
-  view.update(delta);
-  return false;
-}
-
 bool MapScreen::render(sf::RenderTarget& target,
                        sf::RenderStates states) const {
-  target.draw(view, states);
+  target.draw(playerSprite, states);
   return false;
 }
 

@@ -13,17 +13,20 @@ PlayerController::PlayerController(
     Player& player,
     const loki::tiles::MapData& mapData,
     const loki::input::EventHandler& eventHandler,
-    MapScreenView& view)
+    MapScreen& mapScreen)
     : player(player),
       mapData(mapData),
       eventHandler(eventHandler),
-      view(view) {}
+      mapScreen(mapScreen) {}
 
 void PlayerController::init() {
+#if 0
   view.spawnPlayer(player.getMapStatus().pos, player.getMapStatus().facing);
+#endif
 }
 
 bool PlayerController::update(sf::Time delta) {
+#if 0
   if (eventHandler.getInputState("up").status == InputState::TRIGGERED) {
     player.getMapStatus().pos.y -= 1;
     view.movePlayer(Direction::UP);
@@ -40,6 +43,7 @@ bool PlayerController::update(sf::Time delta) {
     player.getMapStatus().pos.x += 1;
     view.movePlayer(Direction::RIGHT);
   }
+#endif
   return true;
 }
 

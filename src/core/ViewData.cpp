@@ -9,7 +9,7 @@
 
 namespace mon {
 
-ViewData::ViewData() {}
+ViewData::ViewData() : playerSpriteData("assets/sprites/player/player.json") {}
 
 void ViewData::load() {
   defaultFont.loadFromFile("assets/fonts/corbell.ttf");
@@ -45,6 +45,10 @@ const loki::text::Stylesheet& ViewData::getTextStylesheet() const {
 
 const loki::text::AnimatedTextStyle& ViewData::getDefaultTextStyle() const {
   return textStylesheet.getDefaultStyle();
+}
+
+const loki::sprites::SpriteData& ViewData::getPlayerSpriteData() const {
+  return playerSpriteData;
 }
 
 }  // namespace mon

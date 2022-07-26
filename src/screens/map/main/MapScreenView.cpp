@@ -5,6 +5,8 @@
  */
 #include "MapScreenView.hpp"
 
+#if 0
+
 namespace mon {
 
 void MapScreenView::update(sf::Time delta) {
@@ -13,18 +15,14 @@ void MapScreenView::update(sf::Time delta) {
 
 void MapScreenView::draw(sf::RenderTarget& target,
                          sf::RenderStates states) const {
-  target.draw(*mapView.getLayers()[0], states);
+  mapView.drawLayer(0, target, states);
   target.draw(playerSprite, states);
-  target.draw(*mapView.getLayers()[1], states);
+  mapView.drawLayer(1, target, states);
 }
 
 void MapScreenView::setMapData(const loki::tiles::MapData& data) {
   mapView.setData(data);
   tileSize = sf::Vector2f{mapView.getData().tilesets[0]->tileSize};
-}
-
-void MapScreenView::setPlayerSpriteData(const loki::sprites::SpriteData& data) {
-  playerSprite.setData(data);
 }
 
 void MapScreenView::spawnPlayer(sf::Vector2i pos, Direction facing) {
@@ -47,3 +45,5 @@ void MapScreenView::movePlayer(Direction dir) {
 }
 
 }  // namespace mon
+
+#endif
