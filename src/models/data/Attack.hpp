@@ -6,6 +6,7 @@
 #pragma once
 
 #include <SFML/System/String.hpp>
+#include <loki/core/json/Variant.hpp>
 #include <map>
 #include <nlohmann/json.hpp>
 #include <string>
@@ -32,9 +33,6 @@ struct ElementalEffect : public OffensiveEffect {
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(ElementalEffect, power, element)
 
 using Effect = std::variant<PhysicalEffect, ElementalEffect>;
-
-void from_json(const nlohmann::json& j, Effect& e);
-void to_json(nlohmann::json& j, const Effect& e);
 
 struct Attack {
   enum class Range { SELF, ALLY, ALL_ALLIES, ENEMY, ALL_ENEMIES, ANY, ALL };

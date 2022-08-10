@@ -28,7 +28,7 @@ void SpeciesList::load() {
   }
 }
 
-const Species& SpeciesList::getSpecies(std::string id) const {
+const Species& SpeciesList::getSpecies(const std::string& id) const {
   return species.at(id);
 }
 

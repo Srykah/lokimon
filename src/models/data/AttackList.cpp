@@ -32,7 +32,7 @@ void AttackList::load() {
   }
 }
 
-const Attack& mon::AttackList::getAttack(std::string id) const {
+const Attack& mon::AttackList::getAttack(const std::string& id) const {
   return attacks.at(id);
 }
 

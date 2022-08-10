@@ -14,10 +14,10 @@ class SpeciesList {
   SpeciesList() = default;
 
   void load();
-  [[nodiscard]] const Species& getSpecies(std::string id) const;
+  [[nodiscard]] const Species& getSpecies(const std::string& id) const;
 
  private:
   std::unordered_map<std::string, Species> species;
 };
 
-}
+}  // namespace mon

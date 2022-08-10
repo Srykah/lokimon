@@ -6,6 +6,7 @@
 #pragma once
 
 #include <SFML/Graphics/Font.hpp>
+#include <loki/graphics/sprites/SpriteData.hpp>
 #include <loki/graphics/styles/TextStyle.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
 #include <loki/strings/i18n/I18nData.hpp>
@@ -25,6 +26,7 @@ class ViewData {
   [[nodiscard]] const loki::text::AnimatedTextStyle& getDefaultTextStyle()
       const;
   [[nodiscard]] const sf::Font& getDefaultFont() const;
+  [[nodiscard]] const loki::sprites::SpriteData& getPlayerSpriteData() const;
 
   void setLang(const std::string& langId);
   [[nodiscard]] const std::string& getCurLangId() const;
@@ -39,6 +41,7 @@ class ViewData {
   sf::Font defaultFont;
   loki::text::Stylesheet textStylesheet;
   loki::i18n::I18nData i18nData;
+  loki::sprites::SpriteData playerSpriteData;
 };
 
-}
+}  // namespace mon

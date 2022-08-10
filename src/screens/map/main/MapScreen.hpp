@@ -5,6 +5,7 @@
  */
 #pragma once
 
+#include <loki/graphics/sprites/Sprite.hpp>
 #include <screens/base/BaseScreen.hpp>
 #include "MapScreenView.hpp"
 
@@ -17,15 +18,11 @@ class MapScreen : public BaseScreen {
   void init() override;
 
   bool update(sf::Time delta) override;
-  bool updateView(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;
 
  private:
-  MapScreenView view;
   std::string mapName;
-  loki::tiles::TilesetData tilesetData;
-  loki::tiles::MapData mapData;
-  loki::sprites::SpriteData playerSpriteData;
+  loki::sprites::Sprite playerSprite;
 };
 
 }  // namespace mon

@@ -30,4 +30,4 @@ class Application {
   friend class BaseScreen;
 };
 
-}
+}  // namespace mon
