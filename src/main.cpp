@@ -1,9 +1,9 @@
 #include <iostream>
-#include "core/Application.hpp"
+#include "core/LokimonApplication.hpp"
 
 int main() {
   try {
-    mon::Application app;
+    mon::LokimonApplication app;
     app.run();
   } catch (std::exception& e) {
     std::cerr << e.what() << std::endl;

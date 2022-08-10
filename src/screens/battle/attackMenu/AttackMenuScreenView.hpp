@@ -13,7 +13,7 @@
 #include <SFML/System/Time.hpp>
 #include <loki/gui/widgets/menu/grid/GridMenuView.hpp>
 #include "core/ViewData.hpp"
-#include "models/gameplay/Monster.hpp"
+#include "gameplay/Monster.hpp"
 
 namespace mon {
 

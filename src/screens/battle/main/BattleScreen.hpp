@@ -8,13 +8,13 @@
 #include "screens/base/BaseScreen.hpp"
 #include "screens/battle/main/BattleScreenView.hpp"
 
-#include "models/gameplay/BattleContext.hpp"
+#include "gameplay/BattleContext.hpp"
 
 namespace mon {
 
 class BattleScreen : public BaseScreen {
  public:
-  explicit BattleScreen(Application& app, Trainer opponent);
+  explicit BattleScreen(LokimonApplication& app, Trainer opponent);
   ~BattleScreen() override = default;
   void init() override;
 

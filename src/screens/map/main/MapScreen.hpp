@@ -13,7 +13,7 @@ namespace mon {
 
 class MapScreen : public BaseScreen {
  public:
-  MapScreen(Application& app, std::string mapName);
+  MapScreen(LokimonApplication& app, std::string mapName);
   ~MapScreen() override = default;
   void init() override;
 

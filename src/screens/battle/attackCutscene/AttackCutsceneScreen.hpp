@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <loki/gui/widgets/elements/textBox/TextBox.hpp>
-#include <models/gameplay/BattleContext.hpp>
+#include <gameplay/BattleContext.hpp>
+#include <loki/gui/elements/TextBox.hpp>
 #include <screens/base/BaseScreen.hpp>
 
 namespace loki::gui {
@@ -17,7 +17,7 @@ namespace mon {
 
 class AttackCutsceneScreen : public BaseScreen {
  public:
-  AttackCutsceneScreen(Application& app, BattleContext& ctx);
+  AttackCutsceneScreen(LokimonApplication& app, BattleContext& ctx);
 
   bool update(sf::Time delta) override;
   bool render(sf::RenderTarget& target, sf::RenderStates states) const override;

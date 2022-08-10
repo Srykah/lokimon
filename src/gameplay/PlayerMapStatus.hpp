@@ -6,7 +6,7 @@
 #pragma once
 
 #include <SFML/System/Vector2.hpp>
-#include "models/other/Direction.hpp"
+#include "misc/Direction.hpp"
 
 namespace mon {
 

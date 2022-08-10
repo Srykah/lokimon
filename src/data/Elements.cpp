@@ -5,7 +5,7 @@
  */
 #include "Elements.hpp"
 #include <stdexcept>
-#include "models/misc/Math.hpp"
+#include "misc/Math.hpp"
 
 namespace {
 

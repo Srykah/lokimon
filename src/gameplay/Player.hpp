@@ -9,7 +9,7 @@
 #include <vector>
 #include "Monster.hpp"
 #include "PlayerMapStatus.hpp"
-#include "models/data/Constants.hpp"
+#include "data/Constants.hpp"
 
 namespace mon {
 

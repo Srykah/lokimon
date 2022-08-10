@@ -5,9 +5,9 @@
  */
 #pragma once
 
-#include <loki/graphics/tiles/model/MapData.hpp>
-#include "models/data/AttackList.hpp"
-#include "models/data/SpeciesList.hpp"
+#include <loki/graphics/tiles/MapData.hpp>
+#include "AttackList.hpp"
+#include "SpeciesList.hpp"
 
 namespace mon {
 

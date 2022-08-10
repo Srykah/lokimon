@@ -9,7 +9,7 @@
 
 namespace mon {
 
-MapScreen::MapScreen(Application& app, std::string mapName)
+MapScreen::MapScreen(LokimonApplication& app, std::string mapName)
     : BaseScreen(app),
       mapName(std::move(mapName)),
       playerSprite(getViewData().getPlayerSpriteData(), "idle_down") {}

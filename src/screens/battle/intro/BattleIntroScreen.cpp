@@ -8,7 +8,8 @@
 
 namespace mon {
 
-BattleIntroScreen::BattleIntroScreen(Application& app, BattleContext& ctx)
+BattleIntroScreen::BattleIntroScreen(LokimonApplication& app,
+                                     BattleContext& ctx)
     : BaseScreen(app), ctx(ctx) {
   ctx.textBox.setAnnotatedString(ctx.tpl.fill(
       getViewData().getI18nStr("/messages/battle/intro"_json_pointer)));

@@ -8,7 +8,8 @@
 
 namespace mon {
 
-AttackCutsceneScreen::AttackCutsceneScreen(Application& app, BattleContext& ctx)
+AttackCutsceneScreen::AttackCutsceneScreen(LokimonApplication& app,
+                                           BattleContext& ctx)
     : BaseScreen(app), ctx(ctx) {
   damageStep();
 }

@@ -5,8 +5,8 @@
  */
 #pragma once
 
-#include <loki/gui/widgets/elements/textBox/TextBox.hpp>
-#include <loki/strings/tpl/TemplateEngine.hpp>
+#include <loki/gui/elements/TextBox.hpp>
+#include <loki/core/tpl/TemplateEngine.hpp>
 
 #include "Monster.hpp"
 #include "Trainer.hpp"

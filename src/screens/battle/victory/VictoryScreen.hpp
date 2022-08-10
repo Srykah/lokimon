@@ -5,14 +5,14 @@
  */
 #pragma once
 
+#include <gameplay/BattleContext.hpp>
 #include <screens/base/BaseScreen.hpp>
-#include <models/gameplay/BattleContext.hpp>
 
 namespace mon {
 
 class VictoryScreen : public BaseScreen {
  public:
-  explicit VictoryScreen(Application& app, BattleContext& ctx);
+  explicit VictoryScreen(LokimonApplication& app, BattleContext& ctx);
   ~VictoryScreen() override = default;
 
   bool update(sf::Time delta) override;

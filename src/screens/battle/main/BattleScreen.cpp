@@ -12,7 +12,7 @@
 
 namespace mon {
 
-BattleScreen::BattleScreen(Application& app, Trainer _opponent)
+BattleScreen::BattleScreen(LokimonApplication& app, Trainer _opponent)
     : BaseScreen(app), ctx {
       .opponent = std::move(_opponent),
       .playerMonster = &getPlayer().getPartyMonster(0),

@@ -5,14 +5,14 @@
  */
 #pragma once
 
-#include <core/Application.hpp>
+#include <core/LokimonApplication.hpp>
 #include <loki/system/screens/Screen.hpp>
 
 namespace mon {
 
 class BaseScreen : public loki::screens::Screen {
  public:
-  explicit BaseScreen(Application& app);
+  explicit BaseScreen(LokimonApplication& app);
 
   [[nodiscard]] Player& getPlayer();
   [[nodiscard]] const Player& getPlayer() const;
@@ -23,7 +23,7 @@ class BaseScreen : public loki::screens::Screen {
  protected:
   [[nodiscard]] loki::screens::ScreenStack& getScreenStack() override;
 
-  Application& app;
+  LokimonApplication& app;
 };
 
 }  // namespace mon

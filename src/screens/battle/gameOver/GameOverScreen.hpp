@@ -5,14 +5,14 @@
  */
 #pragma once
 
+#include <gameplay/BattleContext.hpp>
 #include <screens/base/BaseScreen.hpp>
-#include <models/gameplay/BattleContext.hpp>
 
 namespace mon {
 
 class GameOverScreen : public BaseScreen {
  public:
-  explicit GameOverScreen(Application& app, BattleContext& ctx);
+  explicit GameOverScreen(LokimonApplication& app, BattleContext& ctx);
   ~GameOverScreen() override = default;
 
   bool update(sf::Time delta) override;

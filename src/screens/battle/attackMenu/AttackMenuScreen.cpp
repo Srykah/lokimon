@@ -7,11 +7,11 @@
 #include <fmt/format.h>
 #include <iostream>
 #include <loki/core/utils/IterAdapters.hpp>
-#include <loki/gui/widgets/elements/label/TextLabel.hpp>
+#include <loki/gui/elements/TextLabel.hpp>
 
 namespace mon {
 
-AttackMenuScreen::AttackMenuScreen(Application& app, BattleContext& ctx)
+AttackMenuScreen::AttackMenuScreen(LokimonApplication& app, BattleContext& ctx)
     : BaseScreen(app), ctx(ctx), menu({2u, 2u}) {
   for (auto&& [i, atkId] : loki::enumerate(ctx.playerMonster->getMoveset())) {
     if (!atkId.empty()) {

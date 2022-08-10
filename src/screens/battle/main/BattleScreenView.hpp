@@ -13,10 +13,10 @@
 #include <SFML/System/Time.hpp>
 #include <core/ViewData.hpp>
 #include <loki/gui/widgets/textBox/TextBoxView.hpp>
-#include <models/data/Elements.hpp>
-#include <models/gameplay/Monster.hpp>
-#include <models/gameplay/Player.hpp>
-#include <models/gameplay/Trainer.hpp>
+#include <data/Elements.hpp>
+#include <gameplay/Monster.hpp>
+#include <gameplay/Player.hpp>
+#include <gameplay/Trainer.hpp>
 
 namespace mon {
 

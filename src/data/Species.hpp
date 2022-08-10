@@ -11,7 +11,7 @@
 #include "Attack.hpp"
 #include "AttackList.hpp"
 #include "Elements.hpp"
-#include "models/gameplay/Stats.hpp"
+#include "gameplay/Stats.hpp"
 
 namespace mon {
 

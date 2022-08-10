@@ -5,7 +5,7 @@
  */
 #include "Monster.hpp"
 #include <fmt/format.h>
-#include "models/data/GameData.hpp"
+#include "data/GameData.hpp"
 
 namespace mon {
 
@@ -49,4 +49,4 @@ void Monster::loseHP(int i) {
   }
 }
 
-}
+}  // namespace mon

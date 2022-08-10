@@ -5,12 +5,12 @@
  */
 #pragma once
 
+#include "MonsterBattleData.hpp"
 #include "Stats.hpp"
-#include "models/data/AttackList.hpp"
-#include "models/data/Constants.hpp"
-#include "models/data/Elements.hpp"
-#include "models/data/SpeciesList.hpp"
-#include "models/gameplay/MonsterBattleData.hpp"
+#include "data/AttackList.hpp"
+#include "data/Constants.hpp"
+#include "data/Elements.hpp"
+#include "data/SpeciesList.hpp"
 
 namespace mon {
 

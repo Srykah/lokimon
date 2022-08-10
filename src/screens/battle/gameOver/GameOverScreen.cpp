@@ -7,7 +7,8 @@
 
 namespace mon {
 
-GameOverScreen::GameOverScreen(Application& app, BattleContext& ctx) : BaseScreen(app) {}
+GameOverScreen::GameOverScreen(LokimonApplication& app, BattleContext& ctx)
+    : BaseScreen(app) {}
 
 bool GameOverScreen::update(sf::Time delta) {
   closeThisScreen();

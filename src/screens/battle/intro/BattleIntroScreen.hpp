@@ -5,17 +5,17 @@
  */
 #pragma once
 
-#include <loki/gui/widgets/elements/textBox/TextBox.hpp>
-#include <loki/strings/tpl/TemplateEngine.hpp>
-#include <models/gameplay/BattleContext.hpp>
-#include <models/gameplay/Trainer.hpp>
+#include <gameplay/BattleContext.hpp>
+#include <gameplay/Trainer.hpp>
+#include <loki/core/tpl/TemplateEngine.hpp>
+#include <loki/gui/elements/TextBox.hpp>
 #include <screens/base/BaseScreen.hpp>
 
 namespace mon {
 
 class BattleIntroScreen : public BaseScreen {
  public:
-  BattleIntroScreen(Application& app, BattleContext& ctx);
+  BattleIntroScreen(LokimonApplication& app, BattleContext& ctx);
   ~BattleIntroScreen() override = default;
 
   bool update(sf::Time delta) override;

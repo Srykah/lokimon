@@ -11,7 +11,7 @@
 #include <SFML/System/Time.hpp>
 #include <loki/graphics/sprites/All.hpp>
 #include <loki/graphics/tiles/All.hpp>
-#include <models/other/Direction.hpp>
+#include <other/Direction.hpp>
 
 namespace mon {
 

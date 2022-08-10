@@ -6,20 +6,20 @@
 #pragma once
 
 #include <functional>
-#include <loki/gui/widgets/containers/grid/Grid.hpp>
-#include <loki/gui/widgets/elements/textBox/TextBox.hpp>
-#include <loki/strings/tpl/TemplateEngine.hpp>
-#include <models/data/Attack.hpp>
-#include <models/gameplay/BattleContext.hpp>
-#include <models/gameplay/Monster.hpp>
-#include <screens/base/BaseScreen.hpp>
-#include <screens/battle/attackMenu/AttackMenuScreenView.hpp>
+#include <loki/core/tpl/TemplateEngine.hpp>
+#include <loki/gui/containers/Grid.hpp>
+#include <loki/gui/elements/TextBox.hpp>
+#include "data/Attack.hpp"
+#include "gameplay/BattleContext.hpp"
+#include "gameplay/Monster.hpp"
+#include "screens/base/BaseScreen.hpp"
+#include "screens/battle/attackMenu/AttackMenuScreenView.hpp"
 
 namespace mon {
 
 class AttackMenuScreen : public BaseScreen {
  public:
-  AttackMenuScreen(Application& app, BattleContext& ctx);
+  AttackMenuScreen(LokimonApplication& app, BattleContext& ctx);
   ~AttackMenuScreen() override = default;
 
   bool update(sf::Time delta) override;

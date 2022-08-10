@@ -9,7 +9,7 @@
 #include <loki/graphics/sprites/SpriteData.hpp>
 #include <loki/graphics/styles/TextStyle.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
-#include <loki/strings/i18n/I18nData.hpp>
+#include <loki/core/i18n/I18nData.hpp>
 
 namespace mon {
 

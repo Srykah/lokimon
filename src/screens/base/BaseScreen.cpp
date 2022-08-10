@@ -8,7 +8,7 @@
 
 namespace mon {
 
-BaseScreen::BaseScreen(Application& app) : app(app) {}
+BaseScreen::BaseScreen(LokimonApplication& app) : app(app) {}
 
 const Player& BaseScreen::getPlayer() const {
   return app.player;
@@ -31,7 +31,7 @@ const loki::input::EventHandler& BaseScreen::getEventHandler() const {
 }
 
 loki::screens::ScreenStack& BaseScreen::getScreenStack() {
-  return app.stack;
+  return app.screenStack;
 }
 
 }  // namespace mon

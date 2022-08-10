@@ -1,6 +1,6 @@
 target_sources(lokimon PRIVATE
-	Application.cpp
-	Application.hpp
-	path.hpp
-	ViewData.cpp
-	ViewData.hpp)
+  LokimonApplication.cpp
+  LokimonApplication.hpp
+  path.hpp
+  ViewData.cpp
+  ViewData.hpp)

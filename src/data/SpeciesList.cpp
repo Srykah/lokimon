@@ -4,9 +4,9 @@
  * \copyright GNU GPL v3.0
  */
 #include "SpeciesList.hpp"
-#include <core/path.hpp>
 #include <fstream>
 #include <loki/core/utils/IterAdapters.hpp>
+#include "core/path.hpp"
 
 namespace mon {
 
