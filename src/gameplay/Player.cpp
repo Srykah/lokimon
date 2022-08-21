@@ -1,9 +1,3 @@
-/*!
- * \file Player.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
-
 #include "Player.hpp"
 #include <fmt/format.h>
 
@@ -33,4 +27,4 @@ Monster& Player::getPartyMonster(unsigned int index) {
   }
 }
 
-}
+}  // namespace mon

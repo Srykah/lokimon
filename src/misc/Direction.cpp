@@ -1,8 +1,3 @@
-/*!
- * \file Direction.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Direction.hpp"
 
 #include <stdexcept>

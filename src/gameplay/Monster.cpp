@@ -1,8 +1,3 @@
-/*!
- * \file Monster.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Monster.hpp"
 #include <fmt/format.h>
 #include "data/GameData.hpp"

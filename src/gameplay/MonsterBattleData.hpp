@@ -1,8 +1,3 @@
-/*!
- * \file MonsterBattleData.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 namespace mon {

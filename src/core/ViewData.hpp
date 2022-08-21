@@ -1,15 +1,10 @@
-/*!
- * \file ViewData.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <SFML/Graphics/Font.hpp>
+#include <loki/core/i18n/I18nData.hpp>
 #include <loki/graphics/sprites/SpriteData.hpp>
 #include <loki/graphics/styles/TextStyle.hpp>
 #include <loki/graphics/text/Stylesheet.hpp>
-#include <loki/core/i18n/I18nData.hpp>
 
 namespace mon {
 
@@ -22,11 +17,10 @@ class ViewData {
 
   void load();
 
-  [[nodiscard]] const loki::text::Stylesheet& getTextStylesheet() const;
-  [[nodiscard]] const loki::text::AnimatedTextStyle& getDefaultTextStyle()
-      const;
+  [[nodiscard]] const loki::gfx::Stylesheet& getTextStylesheet() const;
+  [[nodiscard]] const loki::gfx::AnimatedTextStyle& getDefaultTextStyle() const;
   [[nodiscard]] const sf::Font& getDefaultFont() const;
-  [[nodiscard]] const loki::sprites::SpriteData& getPlayerSpriteData() const;
+  [[nodiscard]] const loki::gfx::SpriteData& getPlayerSpriteData() const;
 
   void setLang(const std::string& langId);
   [[nodiscard]] const std::string& getCurLangId() const;
@@ -39,9 +33,9 @@ class ViewData {
 
  private:
   sf::Font defaultFont;
-  loki::text::Stylesheet textStylesheet;
-  loki::i18n::I18nData i18nData;
-  loki::sprites::SpriteData playerSpriteData;
+  loki::gfx::Stylesheet textStylesheet;
+  loki::core::I18nData i18nData;
+  loki::gfx::SpriteData playerSpriteData;
 };
 
 }  // namespace mon

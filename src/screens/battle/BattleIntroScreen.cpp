@@ -1,8 +1,3 @@
-/*!
- * \file BattleIntroScreen.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "BattleIntroScreen.hpp"
 #include <fmt/core.h>
 

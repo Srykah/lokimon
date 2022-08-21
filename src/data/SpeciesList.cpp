@@ -1,8 +1,3 @@
-/*!
- * \file SpeciesList.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "SpeciesList.hpp"
 #include <fstream>
 #include <loki/core/utils/IterAdapters.hpp>

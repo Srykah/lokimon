@@ -1,20 +1,15 @@
-/*!
- * \file ViewData.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "ViewData.hpp"
 #include <fstream>
 #include "core/path.hpp"
 
 namespace mon {
 
-ViewData::ViewData() : playerSpriteData("assets/sprites/player/player.json") {}
+ViewData::ViewData() : playerSpriteData("assets/gfx/player/player.json") {}
 
 void ViewData::load() {
   defaultFont.loadFromFile("assets/fonts/corbell.ttf");
 
-  loki::text::AnimatedTextStyle defaultStyle;
+  loki::gfx::AnimatedTextStyle defaultStyle;
   defaultStyle.font = &defaultFont;
   defaultStyle.characterSize = 15;
   textStylesheet.setDefaultStyle(defaultStyle);
@@ -39,15 +34,15 @@ std::string ViewData::getI18nStr(
   return i18nData.getCurLang().at(ptr).get<std::string>();
 }
 
-const loki::text::Stylesheet& ViewData::getTextStylesheet() const {
+const loki::gfx::Stylesheet& ViewData::getTextStylesheet() const {
   return textStylesheet;
 }
 
-const loki::text::AnimatedTextStyle& ViewData::getDefaultTextStyle() const {
+const loki::gfx::AnimatedTextStyle& ViewData::getDefaultTextStyle() const {
   return textStylesheet.getDefaultStyle();
 }
 
-const loki::sprites::SpriteData& ViewData::getPlayerSpriteData() const {
+const loki::gfx::SpriteData& ViewData::getPlayerSpriteData() const {
   return playerSpriteData;
 }
 

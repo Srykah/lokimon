@@ -1,15 +1,10 @@
-/*!
- * \file BattleIntroScreen.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
-#include <gameplay/BattleContext.hpp>
-#include <gameplay/Trainer.hpp>
 #include <loki/core/tpl/TemplateEngine.hpp>
 #include <loki/gui/elements/TextBox.hpp>
-#include <screens/base/BaseScreen.hpp>
+#include "gameplay/BattleContext.hpp"
+#include "gameplay/Trainer.hpp"
+#include "screens/base/BaseScreen.hpp"
 
 namespace mon {
 

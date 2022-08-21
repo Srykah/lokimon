@@ -1,8 +1,3 @@
-/*!
- * \file AttackSelection.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AttackMenuScreen.hpp"
 #include <fmt/format.h>
 #include <iostream>
@@ -13,7 +8,8 @@ namespace mon {
 
 AttackMenuScreen::AttackMenuScreen(LokimonApplication& app, BattleContext& ctx)
     : BaseScreen(app), ctx(ctx), menu({2u, 2u}) {
-  for (auto&& [i, atkId] : loki::enumerate(ctx.playerMonster->getMoveset())) {
+  for (auto&& [i, atkId] :
+       loki::core::enumerate(ctx.playerMonster->getMoveset())) {
     if (!atkId.empty()) {
       menu.setItem({static_cast<unsigned int>(i % 2ull),
                     static_cast<unsigned int>(i / 2ull)},
@@ -26,7 +22,7 @@ AttackMenuScreen::AttackMenuScreen(LokimonApplication& app, BattleContext& ctx)
 
 bool AttackMenuScreen::render(sf::RenderTarget& target,
                               sf::RenderStates states) const {
-  // target.draw(view, states);
+  // target.draw(view, core);
   return false;
 }
 

@@ -1,19 +1,14 @@
-/*!
- * \file AttackSelection.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <functional>
 #include <loki/core/tpl/TemplateEngine.hpp>
 #include <loki/gui/containers/Grid.hpp>
 #include <loki/gui/elements/TextBox.hpp>
+#include "AttackMenuScreenView.hpp"
 #include "data/Attack.hpp"
 #include "gameplay/BattleContext.hpp"
 #include "gameplay/Monster.hpp"
 #include "screens/base/BaseScreen.hpp"
-#include "screens/battle/attackMenu/AttackMenuScreenView.hpp"
 
 namespace mon {
 

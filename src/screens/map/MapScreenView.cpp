@@ -1,12 +1,6 @@
-/*!
- * \file MapScreenView.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "MapScreenView.hpp"
 
 #if 0
-
 namespace mon {
 
 void MapScreenView::update(sf::Time delta) {
@@ -14,13 +8,13 @@ void MapScreenView::update(sf::Time delta) {
 }
 
 void MapScreenView::draw(sf::RenderTarget& target,
-                         sf::RenderStates states) const {
-  mapView.drawLayer(0, target, states);
-  target.draw(playerSprite, states);
-  mapView.drawLayer(1, target, states);
+                         sf::RenderStates core) const {
+  mapView.drawLayer(0, target, core);
+  target.draw(playerSprite, core);
+  mapView.drawLayer(1, target, core);
 }
 
-void MapScreenView::setMapData(const loki::tiles::MapData& data) {
+void MapScreenView::setMapData(const loki::gfx::MapData& data) {
   mapView.setData(data);
   tileSize = sf::Vector2f{mapView.getData().tilesets[0]->tileSize};
 }
@@ -45,5 +39,4 @@ void MapScreenView::movePlayer(Direction dir) {
 }
 
 }  // namespace mon
-
 #endif

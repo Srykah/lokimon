@@ -1,12 +1,7 @@
-/*!
- * \file BattleState.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
+#include "BattleScreenView.hpp"
 #include "screens/base/BaseScreen.hpp"
-#include "screens/battle/main/BattleScreenView.hpp"
 
 #include "gameplay/BattleContext.hpp"
 

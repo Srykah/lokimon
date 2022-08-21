@@ -1,18 +1,13 @@
-/*!
- * \file PlayerScreen.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "PlayerController.hpp"
 
-using loki::input::InputState;
+using loki::system::InputState;
 
 namespace mon {
 
 PlayerController::PlayerController(
     Player& player,
-    const loki::tiles::MapData& mapData,
-    const loki::input::EventHandler& eventHandler,
+    const loki::gfx::MapData& mapData,
+    const loki::system::EventHandler& eventHandler,
     MapScreen& mapScreen)
     : player(player),
       mapData(mapData),

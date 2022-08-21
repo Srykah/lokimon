@@ -1,10 +1,5 @@
-/*!
- * \file MapScreen.cpp.c
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "MapScreen.hpp"
-#include <screens/map/player/PlayerController.hpp>
+#include "PlayerController.hpp"
 #include "core/path.hpp"
 
 namespace mon {

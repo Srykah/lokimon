@@ -1,13 +1,8 @@
-/*!
- * \file MapScreen.hpp.h
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <loki/graphics/sprites/Sprite.hpp>
-#include <screens/base/BaseScreen.hpp>
 #include "MapScreenView.hpp"
+#include "screens/base/BaseScreen.hpp"
 
 namespace mon {
 
@@ -22,7 +17,7 @@ class MapScreen : public BaseScreen {
 
  private:
   std::string mapName;
-  loki::sprites::Sprite playerSprite;
+  loki::gfx::Sprite playerSprite;
 };
 
 }  // namespace mon

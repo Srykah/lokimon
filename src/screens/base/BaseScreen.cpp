@@ -1,8 +1,3 @@
-/*!
- * \file BaseScreen.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "BaseScreen.hpp"
 #include <loki/system/screens/ScreenStack.hpp>
 
@@ -26,12 +21,8 @@ const ViewData& BaseScreen::getViewData() const {
   return app.viewData;
 }
 
-const loki::input::EventHandler& BaseScreen::getEventHandler() const {
+const loki::system::EventHandler& BaseScreen::getEventHandler() const {
   return app.eventHandler;
-}
-
-loki::screens::ScreenStack& BaseScreen::getScreenStack() {
-  return app.screenStack;
 }
 
 }  // namespace mon

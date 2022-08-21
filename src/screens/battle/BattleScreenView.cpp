@@ -1,17 +1,11 @@
-/*!
- * \file BattleScreenView.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "BattleScreenView.hpp"
 #include <fmt/core.h>
 #include <SFML/Graphics/RenderTarget.hpp>
 
 #if 0
-
 namespace mon {
 
-const loki::styles::ShapeStyle BattleScreenView::FRAME_STYLE{
+const loki::gfx::ShapeStyle BattleScreenView::FRAME_STYLE{
     nullptr, sf::IntRect{}, sf::Color::Blue, sf::Color::White, -3.f};
 
 BattleScreenView::BattleScreenView(const ViewData& viewData)
@@ -46,12 +40,12 @@ void BattleScreenView::setOpponentMonster(const Monster* _opponentMonster) {
 }
 
 void BattleScreenView::draw(sf::RenderTarget& target,
-                            sf::RenderStates states) const {
-  target.draw(playerMonsterShape, states);
-  target.draw(opponentMonsterShape, states);
-  target.draw(playerMonsterHPText, states);
-  target.draw(opponentMonsterHPText, states);
-  target.draw(textBox, states);
+                            sf::RenderStates core) const {
+  target.draw(playerMonsterShape, core);
+  target.draw(opponentMonsterShape, core);
+  target.draw(playerMonsterHPText, core);
+  target.draw(opponentMonsterHPText, core);
+  target.draw(textBox, core);
 }
 
 void BattleScreenView::updateHPTexts() {
@@ -69,5 +63,4 @@ loki::gui::TextBoxView& BattleScreenView::getTextBox() {
 }
 
 }  // namespace mon
-
 #endif

@@ -1,12 +1,6 @@
-/*!
- * \file AttackMenuScreenView.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #if 0
-
 #include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -22,7 +16,7 @@ class AttackMenuScreenView : public sf::Drawable {
   explicit AttackMenuScreenView(const ViewData& viewData,
                                 const Monster& monster);
   void draw(sf::RenderTarget& target,
-            sf::RenderStates states = sf::RenderStates()) const override;
+            sf::RenderStates core = sf::RenderStates()) const override;
 
   void showMenu() { menu.unhide(); }
 
@@ -35,5 +29,4 @@ class AttackMenuScreenView : public sf::Drawable {
 };
 
 }
-
 #endif

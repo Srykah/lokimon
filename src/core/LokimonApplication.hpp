@@ -1,8 +1,3 @@
-/*!
- * \file Application.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <loki/system/app/Application.hpp>
@@ -12,7 +7,7 @@
 
 namespace mon {
 
-class LokimonApplication : public loki::app::Application {
+class LokimonApplication : public loki::system::Application {
  public:
   LokimonApplication();
   void run();

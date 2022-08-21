@@ -1,8 +1,3 @@
-/*!
- * \file VictoryScreen.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "VictoryScreen.hpp"
 
 namespace mon {

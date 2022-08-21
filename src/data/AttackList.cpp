@@ -1,8 +1,3 @@
-/*!
- * \file AttackList.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AttackList.hpp"
 #include <fstream>
 #include <loki/core/utils/IterAdapters.hpp>

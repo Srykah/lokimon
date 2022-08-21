@@ -1,8 +1,3 @@
-/*!
- * \file Trainer.hpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #pragma once
 
 #include <string>
@@ -16,7 +11,9 @@ struct Trainer {
   Trainer(std::string name, std::vector<Monster> monsters);
 
   [[nodiscard]] const std::string& getName() const { return name; }
-  [[nodiscard]] Monster& getMonster(unsigned int index) { return monsters.at(index); }
+  [[nodiscard]] Monster& getMonster(unsigned int index) {
+    return monsters.at(index);
+  }
   [[nodiscard]] std::size_t getMonsterCount() const { return monsters.size(); }
 
  private:
@@ -24,4 +21,4 @@ struct Trainer {
   std::vector<Monster> monsters;
 };
 
-}
+}  // namespace mon

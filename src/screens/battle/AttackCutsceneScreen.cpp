@@ -1,8 +1,3 @@
-/*!
- * \file AttackCutsceneScreen.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "AttackCutsceneScreen.hpp"
 #include <loki/core/utils/Random.hpp>
 

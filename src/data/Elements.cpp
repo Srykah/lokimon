@@ -1,8 +1,3 @@
-/*!
- * \file Elements.cpp
- * \author Srykah
- * \copyright GNU GPL v3.0
- */
 #include "Elements.hpp"
 #include <stdexcept>
 #include "misc/Math.hpp"
