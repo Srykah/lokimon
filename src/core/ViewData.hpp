@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics/Font.hpp>
+
 #include <loki/core/i18n/I18nData.hpp>
 #include <loki/graphics/sprites/SpriteData.hpp>
 #include <loki/graphics/styles/TextStyle.hpp>

@@ -1,28 +1,83 @@
 {
-  "keyboard": {
-    "up": [{
-      "type": "key",
-      "id": "up"
-    }],
-    "down": [{
-      "type": "key",
-      "id": "down"
-    }],
-    "left": [{
-      "type": "key",
-      "id": "left"
-    }],
-    "right": [{
-      "type": "key",
-      "id": "right"
-    }],
-    "ok": [{
-      "type": "key",
-      "id": "enter"
-    }],
-    "back": [{
-      "type": "key",
-      "id": "backspace"
-    }]
-  }
+  "configs": {
+    "keyboard": {
+      "up": [
+        {
+          "alt_id": 0,
+          "value": "Up"
+        },
+        {
+          "alt_id": 2,
+          "value": {
+            "axis": "Y",
+            "direction": 1
+          }
+        }
+      ],
+      "down": [
+        {
+          "alt_id": 0,
+          "value": "Down"
+        }
+      ],
+      "left": [
+        {
+          "alt_id": 0,
+          "value": "Left"
+        }
+      ],
+      "right": [
+        {
+          "alt_id": 0,
+          "value": "Right"
+        }
+      ],
+      "ok": [
+        {
+          "alt_id": 0,
+          "value": "Enter"
+        }
+      ],
+      "back": [
+        {
+          "alt_id": 0,
+          "value": "Backspace"
+        }
+      ]
+    }
+  },
+  "deadZones": [
+    [
+      "X",
+      0.3
+    ],
+    [
+      "Y",
+      0.3
+    ],
+    [
+      "Z",
+      0.3
+    ],
+    [
+      "R",
+      0.3
+    ],
+    [
+      "U",
+      0.3
+    ],
+    [
+      "V",
+      0.3
+    ],
+    [
+      "PovX",
+      0.3
+    ],
+    [
+      "PovY",
+      0.3
+    ]
+  ]
 }

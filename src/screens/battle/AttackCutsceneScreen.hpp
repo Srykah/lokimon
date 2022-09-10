@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/gui/elements/TextBox.hpp>
+
 #include "gameplay/BattleContext.hpp"
 #include "screens/base/BaseScreen.hpp"
 

@@ -9,7 +9,7 @@ class PlayerController {
  public:
   PlayerController(Player& player,
                    const loki::gfx::MapData& mapData,
-                   const loki::system::EventHandler& eventHandler,
+                   const loki::system::InputManager& eventHandler,
                    MapScreen& mapScreen);
   void init();
 
@@ -19,7 +19,7 @@ class PlayerController {
  private:
   Player& player;
   const loki::gfx::MapData& mapData;
-  const loki::system::EventHandler& eventHandler;
+  const loki::system::InputManager& eventHandler;
   MapScreen& mapScreen;
 };
 

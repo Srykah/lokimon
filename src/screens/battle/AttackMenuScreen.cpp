@@ -1,6 +1,9 @@
 #include "AttackMenuScreen.hpp"
-#include <fmt/format.h>
+
 #include <iostream>
+
+#include <fmt/format.h>
+
 #include <loki/core/utils/IterAdapters.hpp>
 #include <loki/gui/elements/TextLabel.hpp>
 

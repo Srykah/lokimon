@@ -2,6 +2,7 @@
 
 #include <loki/core/tpl/TemplateEngine.hpp>
 #include <loki/gui/elements/TextBox.hpp>
+
 #include "gameplay/BattleContext.hpp"
 #include "gameplay/Trainer.hpp"
 #include "screens/base/BaseScreen.hpp"

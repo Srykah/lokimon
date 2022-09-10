@@ -1,4 +1,4 @@
-target_sources(lokimon PRIVATE
+#[[target_sources(lokimon PRIVATE
   # base
   base/BaseScreen.cpp
   base/BaseScreen.hpp
@@ -27,3 +27,4 @@ target_sources(lokimon PRIVATE
   map/PlayerController.cpp
   map/PlayerController.hpp
   )
+#]]

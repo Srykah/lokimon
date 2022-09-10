@@ -7,7 +7,7 @@ namespace mon {
 PlayerController::PlayerController(
     Player& player,
     const loki::gfx::MapData& mapData,
-    const loki::system::EventHandler& eventHandler,
+    const loki::system::InputManager& eventHandler,
     MapScreen& mapScreen)
     : player(player),
       mapData(mapData),

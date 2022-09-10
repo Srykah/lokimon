@@ -1,4 +1,5 @@
 #include "BaseScreen.hpp"
+
 #include <loki/system/screens/ScreenStack.hpp>
 
 namespace mon {
@@ -21,7 +22,7 @@ const ViewData& BaseScreen::getViewData() const {
   return app.viewData;
 }
 
-const loki::system::EventHandler& BaseScreen::getEventHandler() const {
+const loki::system::InputManager& BaseScreen::getEventHandler() const {
   return app.eventHandler;
 }
 

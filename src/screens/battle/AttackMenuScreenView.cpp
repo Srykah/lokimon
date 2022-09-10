@@ -1,6 +1,8 @@
 #include "AttackMenuScreenView.hpp"
-#include <fmt/format.h>
+
 #include <SFML/Graphics/RenderTarget.hpp>
+#include <fmt/format.h>
+
 #include <loki/core/utils/IterAdapters.hpp>
 
 #if 0

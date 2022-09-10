@@ -1,5 +1,7 @@
 #include "Monster.hpp"
+
 #include <fmt/format.h>
+
 #include "data/GameData.hpp"
 
 namespace mon {

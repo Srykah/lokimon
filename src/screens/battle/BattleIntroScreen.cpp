@@ -1,4 +1,5 @@
 #include "BattleIntroScreen.hpp"
+
 #include <fmt/core.h>
 
 namespace mon {

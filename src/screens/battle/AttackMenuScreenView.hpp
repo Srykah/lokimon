@@ -5,7 +5,9 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/System/Time.hpp>
+
 #include <loki/gui/widgets/menu/grid/GridMenuView.hpp>
+
 #include "core/ViewData.hpp"
 #include "gameplay/Monster.hpp"
 

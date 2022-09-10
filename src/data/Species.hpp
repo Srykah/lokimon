@@ -1,8 +1,10 @@
 #pragma once
 
-#include <nlohmann/json.hpp>
 #include <string>
 #include <vector>
+
+#include <nlohmann/json.hpp>
+
 #include "Attack.hpp"
 #include "AttackList.hpp"
 #include "Elements.hpp"

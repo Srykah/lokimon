@@ -1,5 +1,7 @@
 #include "Elements.hpp"
+
 #include <stdexcept>
+
 #include "misc/Math.hpp"
 
 namespace {

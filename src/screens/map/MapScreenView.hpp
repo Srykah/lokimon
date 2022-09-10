@@ -3,8 +3,9 @@
 #if 0
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/System/Time.hpp>
-#include <loki/graphics/gfx/All.hpp>
 #include <other/Direction.hpp>
+
+#include <loki/graphics/gfx/All.hpp>
 
 namespace mon {
 

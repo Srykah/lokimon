@@ -1,4 +1,5 @@
 #include "Player.hpp"
+
 #include <fmt/format.h>
 
 namespace mon {

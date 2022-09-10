@@ -1,12 +1,15 @@
 #pragma once
 
-#include <SFML/System/String.hpp>
-#include <loki/core/json/Variant.hpp>
 #include <map>
-#include <nlohmann/json.hpp>
 #include <string>
 #include <variant>
 #include <vector>
+
+#include <SFML/System/String.hpp>
+#include <nlohmann/json.hpp>
+
+#include <loki/core/json/Variant.hpp>
+
 #include "Elements.hpp"
 
 namespace mon {

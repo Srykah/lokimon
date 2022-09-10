@@ -1,9 +1,8 @@
 #pragma once
 
 #include "BattleScreenView.hpp"
-#include "screens/base/BaseScreen.hpp"
-
 #include "gameplay/BattleContext.hpp"
+#include "screens/base/BaseScreen.hpp"
 
 namespace mon {
 

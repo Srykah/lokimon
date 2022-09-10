@@ -9,9 +9,11 @@
       "speed": 0,
       "effects": [
         {
-          "type": "PHYSICAL",
-          "family": "BIRD",
-          "power": 10
+          "alt_id": 0,
+          "value": {
+            "family": "BIRD",
+            "power": 10
+          }
         }
       ]
     },
@@ -21,9 +23,11 @@
       "speed": 0,
       "effects": [
         {
-          "type": "ELEMENTAL",
-          "element": "FIRE",
-          "power": 12
+          "alt_id": 1,
+          "value": {
+            "element": "FIRE",
+            "power": 12
+          }
         }
       ]
     },
@@ -33,9 +37,11 @@
       "speed": 0,
       "effects": [
         {
-          "type": "ELEMENTAL",
-          "element": "ICE",
-          "power": 15
+          "alt_id": 1,
+          "value": {
+            "element": "ICE",
+            "power": 15
+          }
         }
       ]
     }

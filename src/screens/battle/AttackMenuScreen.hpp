@@ -1,9 +1,11 @@
 #pragma once
 
 #include <functional>
+
 #include <loki/core/tpl/TemplateEngine.hpp>
 #include <loki/gui/containers/Grid.hpp>
 #include <loki/gui/elements/TextBox.hpp>
+
 #include "AttackMenuScreenView.hpp"
 #include "data/Attack.hpp"
 #include "gameplay/BattleContext.hpp"

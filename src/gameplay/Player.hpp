@@ -2,6 +2,7 @@
 
 #include <array>
 #include <vector>
+
 #include "Monster.hpp"
 #include "PlayerMapStatus.hpp"
 #include "data/Constants.hpp"

@@ -1,4 +1,5 @@
 #include "BattleScreen.hpp"
+
 #include "VictoryScreen.hpp"
 #include "screens/battle/AttackCutsceneScreen.hpp"
 #include "screens/battle/AttackMenuScreen.hpp"
@@ -14,9 +15,8 @@ BattleScreen::BattleScreen(LokimonApplication& app, Trainer _opponent)
           .opponentMonster = &ctx.opponent.getMonster(0),
           .playerMove = nullptr,
           .opponentMove = nullptr,
-          .tpl {},
-      .textBox{getEventHandler(), "ok"}
-    } {
+          .tpl{},
+          .textBox{getEventHandler(), "ok"}} {
   // view.setPlayerMonster(playerMonster);
   // view.setOpponentMonster(opponentMonster);
 
@@ -30,7 +30,6 @@ void BattleScreen::init() {
   Screen::init();
 
   // view.updateHPTexts();
-
 }
 
 bool BattleScreen::update(sf::Time delta) {

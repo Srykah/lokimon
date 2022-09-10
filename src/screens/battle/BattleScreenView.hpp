@@ -10,6 +10,7 @@
 #include <gameplay/Monster.hpp>
 #include <gameplay/Player.hpp>
 #include <gameplay/Trainer.hpp>
+
 #include <loki/gui/widgets/textBox/TextBoxView.hpp>
 
 namespace mon {

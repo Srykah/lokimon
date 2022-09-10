@@ -1,6 +1,7 @@
 #pragma once
 
 #include <core/LokimonApplication.hpp>
+
 #include <loki/system/screens/Screen.hpp>
 
 namespace mon {
@@ -11,7 +12,7 @@ class BaseScreen : public loki::system::Screen {
 
   [[nodiscard]] Player& getPlayer();
   [[nodiscard]] const Player& getPlayer() const;
-  [[nodiscard]] const loki::system::EventHandler& getEventHandler() const;
+  [[nodiscard]] const loki::system::InputManager& getEventHandler() const;
   [[nodiscard]] const ViewData& getViewData() const;
   [[nodiscard]] const GameData& getGameData() const;
 

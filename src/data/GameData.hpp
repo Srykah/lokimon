@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/graphics/tiles/MapData.hpp>
+
 #include "AttackList.hpp"
 #include "SpeciesList.hpp"
 

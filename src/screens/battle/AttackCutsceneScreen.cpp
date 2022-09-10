@@ -1,4 +1,5 @@
 #include "AttackCutsceneScreen.hpp"
+
 #include <loki/core/utils/Random.hpp>
 
 namespace mon {

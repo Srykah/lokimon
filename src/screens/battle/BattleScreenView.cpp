@@ -1,6 +1,7 @@
 #include "BattleScreenView.hpp"
-#include <fmt/core.h>
+
 #include <SFML/Graphics/RenderTarget.hpp>
+#include <fmt/core.h>
 
 #if 0
 namespace mon {

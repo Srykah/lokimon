@@ -1,5 +1,7 @@
 #include "ViewData.hpp"
+
 #include <fstream>
+
 #include "core/path.hpp"
 
 namespace mon {

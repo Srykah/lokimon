@@ -1,6 +1,7 @@
 #pragma once
 
 #include <loki/graphics/sprites/Sprite.hpp>
+
 #include "MapScreenView.hpp"
 #include "screens/base/BaseScreen.hpp"
 
