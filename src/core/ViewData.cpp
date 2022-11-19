@@ -6,7 +6,7 @@
 
 namespace mon {
 
-ViewData::ViewData() : playerSpriteData("assets/gfx/player/player.json") {}
+ViewData::ViewData() : playerSpriteData("assets/gfx/player/player.sprite.json") {}
 
 void ViewData::load() {
   defaultFont.loadFromFile("assets/fonts/corbell.ttf");
@@ -16,7 +16,7 @@ void ViewData::load() {
   defaultStyle.characterSize = 15;
   textStylesheet.setDefaultStyle(defaultStyle);
 
-  i18nData.loadFromFile(DATA_PATH / "lang" / "lang_list.json");
+  i18nData.loadFromFile(DATA_PATH / "lang" / "lang_list.langdb.json");
   i18nData.setCurLang("en-us");
 }
 

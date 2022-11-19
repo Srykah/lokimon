@@ -1,4 +1,5 @@
 BasedOnStyle: Chromium
+ColumnLimit: 120
 IncludeBlocks: Regroup
 IncludeCategories:
   # stdlib headers

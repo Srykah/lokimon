@@ -10,9 +10,8 @@ void LokimonApplication::init() {
   window.setInternalResolution({320, 180});
   window.setMinimumSize({320, 180});
   window.create({640, 360}, "Lokimon", loki::system::WindowStyle::DEFAULT);
-  inputManager.loadConfigs(SAVES_PATH / "inputs.json");
-  inputManager.setPlayerConfig(
-      {"keyboard", loki::system::InputMethod::KeyboardAndMouse});
+  inputManager.loadConfigs(SAVES_PATH / "lokimon.inputs.json");
+  inputManager.setPlayerConfig({"keyboard", loki::system::InputMethod::KeyboardAndMouse});
   viewData.load();
   gameData.load();
   player.load();

@@ -5,11 +5,11 @@
   "langs": {
     "en-us": {
       "name": "English (US)",
-      "filepath": "lang_en-us.json"
+      "filepath": "en-us.lang.json"
     },
     "fr-fr": {
       "name": "Français (FR)",
-      "filepath": "lang_fr-fr.json"
+      "filepath": "fr-fr.lang.json"
     }
   }
 }
